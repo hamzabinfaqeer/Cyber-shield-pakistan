@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CyberShield Pakistan: a free English guide to scams, account safety, SIM and CNIC checks, business name protection and cybercrime helplines.">
+<title>CyberShield Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky navy bar, one view at a time (hash routed), floating ShieldBot. Brand kept from the original: navy + electric blue. */
+:root{
+  --bg:#F4F7FC; --surface:#FFFFFF; --ink:#0B1B33; --muted:#4E5F7A; --line:#DCE4F0;
+  --navy:#0A1931; --blue:#0B63E5; --blue-soft:#E4EEFF; --on-blue:#FFFFFF;
+  --red:#C62839; --red-soft:#FCE9EC; --green:#1B8A3C; --green-soft:#E6F5EA; --amber:#8A5A00; --amber-soft:#FFF4D6;
+  --hero-a:#0A1931; --hero-b:#0B4FA8; --hero-c:#1473F0;
+  --f-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --f-body:'Plus Jakarta Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08111F; --surface:#0F1C31; --ink:#E8EEFB; --muted:#9DAEC9; --line:#223351;
+  --blue:#5AA2FF; --blue-soft:#13264A; --on-blue:#06122A;
+  --red:#FF7B8A; --red-soft:#3A1620; --green:#58D17A; --green-soft:#123222; --amber:#F5C25B; --amber-soft:#3A2D0E;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08111F; --surface:#0F1C31; --ink:#E8EEFB; --muted:#9DAEC9; --line:#223351;
+  --blue:#5AA2FF; --blue-soft:#13264A; --on-blue:#06122A;
+  --red:#FF7B8A; --red-soft:#3A1620; --green:#58D17A; --green-soft:#123222; --amber:#F5C25B; --amber-soft:#3A2D0E;
+  color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:60}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;text-wrap:balance}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto}
+.full{margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+/* NAV */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);color:#fff;margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-shadow:0 2px 14px rgba(0,0,0,.3)}
+.bar .row{max-width:1560px;margin:0 auto;display:flex;align-items:center;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--f-display);font-weight:800;font-size:18px;text-decoration:none;white-space:nowrap}
+.menu{display:flex;gap:2px;margin-left:auto;align-items:center}
+.menu a{color:#D5E3FF;text-decoration:none;font-size:13px;font-weight:600;padding:8px 10px;border-radius:8px;white-space:nowrap}
+.menu a:hover{background:rgba(255,255,255,.1);color:#fff}
+.menu a.on{background:#1473F0;color:#fff}
+.sos{background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:8px 14px;border-radius:10px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.sos:hover{background:rgba(255,255,255,.12)}
+.sos svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bn{line-height:1.05;font-size:17px}
+#sbTip{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:80;background:#fff;color:#0B1B33;border-radius:12px;padding:8px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#sbTip::after{content:"";position:absolute;bottom:-6px;right:34px;width:12px;height:12px;background:#fff;transform:rotate(45deg)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;line-height:1;margin-left:auto;padding:4px 8px}
+@media(max-width:1500px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;left:0;right:0;top:64px;background:var(--navy);flex-direction:column;align-items:stretch;padding:8px max(16px,env(safe-area-inset-left,0px)) 14px;max-height:calc(100vh - 140px);overflow:auto;margin-left:0}
+  .menu.open{display:flex}
+  .menu a{font-size:16px;padding:12px}
+}
+@media(max-width:520px){.bar .row{gap:8px}.brand{min-width:0;flex:0 1 auto;gap:7px}.brand span{font-size:14px;overflow:hidden;text-overflow:ellipsis}.brand svg{flex:none;width:28px;height:28px}.sos{padding:8px 9px;font-size:12px;flex:none}.burger{padding:4px 4px;flex:none}}
+/* VIEWS */
+.view{display:none;padding-bottom:90px}
+.view.show{display:block;animation:rise .3s ease both}
+@keyframes rise{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.view.show{animation:none}html{scroll-behavior:auto}}
+.hero{background:linear-gradient(140deg,var(--hero-a) 0%,var(--hero-b) 58%,var(--hero-c) 100%);color:#fff;padding-block:64px 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none' stroke='%237DB6FF' stroke-opacity='.3' stroke-width='1.5'%3E%3Cpath d='M0 40h50l12 12h40M80 0v30l14 14h66M20 160v-40l16-16h44l12-12v-30M120 160v-24l12-12h28M0 120h12l10-10'/%3E%3Ccircle cx='62' cy='52' r='3'/%3E%3Ccircle cx='94' cy='44' r='3'/%3E%3Ccircle cx='80' cy='92' r='3'/%3E%3Ccircle cx='132' cy='124' r='3'/%3E%3Ccircle cx='22' cy='110' r='3'/%3E%3C/svg%3E");background-size:160px 160px;mask-image:linear-gradient(to bottom,#000 40%,transparent)}
+.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:900px}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;margin-bottom:16px;max-width:820px}
+.hero p{max-width:640px;color:#D8E6FF;font-size:17px;margin-bottom:28px}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 18px;border-radius:99px;font-size:13px;font-weight:600;margin-bottom:22px;color:#E8F1FF}
+.hero .btns{justify-content:center}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.svc{text-align:center}
+.svc .pbadge{margin:0 auto 14px;width:58px;height:58px;border-radius:16px}
+.svc .pbadge svg{width:30px;height:30px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#BCD6FF;margin-bottom:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:13px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.blue{background:#1473F0;color:#fff}
+.btn.white{background:#fff;color:#0A1931}
+.btn.ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn.red{background:var(--red);color:var(--surface)}
+.btn.line{border-color:var(--blue);color:var(--blue);background:transparent}
+.hero .test{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:22px}
+.hero .test h3{font-size:19px;margin-bottom:6px}
+.hero .test p{font-size:14px;margin-bottom:14px}
+.hero select,.hero input{width:100%}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+section{padding-block:56px}
+.head{margin-bottom:28px;max-width:720px}
+.head h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:8px;color:var(--ink)}
+.head p{color:var(--muted)}
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.g4,.g3,.g2{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0}
+a.card,button.card{display:block;text-align:left;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
+a.card:hover,button.card:hover{transform:translateY(-4px);border-color:var(--blue)}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14.5px}
+.ico{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin-bottom:14px}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.band{background:var(--navy);color:#fff}
+.band .head h2{color:#fff}.band .head p{color:#B9CBEA}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+.steps li{list-style:none;counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blue);color:var(--on-blue);font-family:var(--f-display);font-weight:800;margin-bottom:12px}
+.steps h3{font-size:18px;margin-bottom:4px}.steps p{color:var(--muted);font-size:14.5px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pillrow span{border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;color:#E3ECFF}
+/* page head */
+.ph{background:linear-gradient(140deg,var(--hero-a),var(--hero-b));color:#fff;padding-block:44px 38px}
+.ph h1{font-size:clamp(28px,4.4vw,42px);font-weight:800;margin-bottom:8px}
+.ph p{color:#D3E2FF;max-width:700px}
+/* items */
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.item summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;gap:12px;align-items:center;font-weight:700}
+.item summary::-webkit-details-marker{display:none}
+.item summary::after{content:"+";margin-left:auto;color:var(--blue);font-size:22px;line-height:1}
+.item[open] summary::after{content:"\2013"}
+.item .body{padding:0 18px 18px;display:grid;gap:10px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:99px;padding:3px 10px;white-space:nowrap}
+.tag.r{background:var(--red-soft);color:var(--red)}.tag.g{background:var(--green-soft);color:var(--green)}.tag.b{background:var(--blue-soft);color:var(--blue)}
+.blk{border-radius:10px;padding:11px 14px;background:var(--bg);border:1px solid var(--line);font-size:14.5px}
+.blk h4{font-family:var(--f-body);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.blk.r{background:var(--red-soft);border-color:transparent}.blk.r h4{color:var(--red)}
+.blk.g{background:var(--green-soft);border-color:transparent}.blk.g h4{color:var(--green)}
+.blk ol,.blk ul{padding-left:20px}.blk li{margin:3px 0}
+.note{background:var(--amber-soft);color:var(--ink);border-radius:12px;padding:14px 16px;font-size:14.5px;border:1px solid var(--line)}
+.note b{color:var(--amber)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{background:var(--surface);border:2px solid var(--line);color:var(--ink);border-radius:99px;padding:9px 18px;font-weight:700;font-size:14px}
+.tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:minmax(0,1fr)}}
+h3.sub{font-size:21px;margin:6px 0 14px}
+.step-list{list-style:none;counter-reset:n;display:grid;gap:10px}
+.step-list li{counter-increment:n;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 52px;position:relative;font-size:15px}
+.step-list li::before{content:counter(n);position:absolute;left:12px;top:11px;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:14px}
+.step-list li b{display:block;color:var(--ink)}
+.step-list li span{color:var(--muted);font-size:14px}
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--f-display);font-weight:800;font-size:19px;white-space:nowrap;color:var(--blue);font-variant-numeric:tabular-nums}
+.copy{background:var(--blue-soft);color:var(--blue);border:0;border-radius:8px;padding:4px 10px;font-weight:700;font-size:12px;margin-left:6px}
+/* panic */
+.panic{background:var(--red);color:#fff;border-radius:18px;padding:26px;margin-bottom:28px}
+:root[data-theme="dark"] .panic,.panic{--p:1}
+.panic h2{font-size:clamp(22px,3.2vw,30px);margin-bottom:12px;color:#fff}
+.panic ol{padding-left:22px;font-size:16px;font-weight:500;display:grid;gap:6px}
+.panic{background:#C62839}
+/* seniors */
+.old{font-size:20px}
+.old .oi{background:var(--surface);border:3px solid var(--blue);border-radius:16px;padding:18px 20px;margin-bottom:14px}
+.old .oi b{display:block;font-family:var(--f-display);font-size:24px;margin-bottom:4px}
+.big3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+@media(max-width:760px){.big3{grid-template-columns:minmax(0,1fr)}}
+.big3 button{background:var(--red);color:#fff;border:0;border-radius:16px;padding:26px 14px;font-family:var(--f-display);font-size:24px;font-weight:800}
+.big3 button[aria-pressed="true"]{outline:4px solid var(--ink)}
+#bigmsg{background:var(--green-soft);border:3px solid var(--green);border-radius:16px;padding:18px 20px;font-size:21px;font-weight:600;margin-bottom:18px}
+/* checker / forms */
+textarea,input[type=text],select{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:13px 14px}
+textarea{min-height:150px;resize:vertical}
+.hero select{color:#0B1B33;background:#fff}
+.rbox{border-radius:16px;padding:22px;margin-top:18px;border:2px solid}
+.rbox.r{background:var(--red-soft);border-color:var(--red)}.rbox.g{background:var(--green-soft);border-color:var(--green)}.rbox.a{background:var(--amber-soft);border-color:var(--amber)}
+.rbox h3{font-size:24px;margin-bottom:6px}
+.rbox ul{padding-left:20px;margin-top:8px}
+.ex{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ex button{background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--ink);text-align:left}
+.ex button:hover{border-color:var(--blue)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+.q h3{font-size:17px;margin-bottom:10px;font-family:var(--f-body);font-weight:700}
+.q label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:2px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer;font-size:15px}
+.q label.ok{border-color:var(--green);background:var(--green-soft)}.q label.no{border-color:var(--red);background:var(--red-soft)}
+.q .why{display:none;font-size:14px;color:var(--muted);margin-top:6px}
+.q.done .why{display:block}
+.score{border-radius:18px;padding:26px;text-align:center;margin-top:20px;border:2px solid var(--blue);background:var(--blue-soft)}
+.score .n{font-family:var(--f-display);font-size:56px;font-weight:800;color:var(--blue)}
+/* team */
+.tcard{text-align:center}
+.av{width:84px;height:84px;border-radius:50%;background:linear-gradient(140deg,var(--navy),#1473F0);color:#fff;display:grid;place-items:center;font-family:var(--f-display);font-size:30px;font-weight:800;margin:0 auto 12px}
+.role{display:inline-block;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:12.5px;padding:3px 12px;border-radius:99px}
+.uni{margin-top:28px;background:var(--navy);color:#fff;border-radius:18px;padding:30px;text-align:center}
+.uni p{font-family:var(--f-display);font-size:clamp(18px,2.6vw,24px);font-weight:800;margin:4px 0}
+.uni small{color:#B9CBEA}
+details.faq{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+details.faq summary{padding:15px 18px;font-weight:700;cursor:pointer}
+details.faq div{padding:0 18px 16px;color:var(--muted)}
+footer{background:var(--navy);color:#C5D5F2;margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding:30px max(16px,env(safe-area-inset-left,0px)) 110px;font-size:14px;text-align:center}
+footer b{color:#fff;display:block;margin-bottom:18px;font-size:20px;font-family:var(--f-display)}
+.ftgrid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;text-align:left}
+@media(max-width:700px){.ftgrid{grid-template-columns:minmax(0,1fr);text-align:center}}
+.ftgrid h4{font-family:var(--f-body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7DB6FF;margin-bottom:8px}
+.ftgrid p{color:#fff;font-weight:600;margin-bottom:8px;line-height:1.35}
+.ftgrid small{color:#9FB4D6;font-weight:500;font-size:12.5px}
+.ftnote{margin-top:24px;color:#9FB4D6;font-size:13px;max-width:700px;margin-left:auto;margin-right:auto}
+/* menu and title icons, tip, back to top */
+.menu a{display:inline-flex;align-items:center;gap:6px}
+.menu a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ph h1{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.ph .tic{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;flex:none}
+.ph .tic svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.quick a{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:700;font-size:14.5px}
+.quick a:hover{border-color:var(--blue)}
+.quick .ico{margin:0;width:40px;height:40px;flex:none}
+.quick .ico svg{width:22px;height:22px}
+.tipbox{display:flex;gap:16px;align-items:flex-start;background:var(--amber-soft);border:1px solid var(--line);border-radius:16px;padding:20px}
+.tipbox .ico{background:var(--surface);color:var(--amber);margin:0;flex:none}
+.tipbox h3{font-size:17px;margin-bottom:4px}
+.tipbox button{margin-top:8px;background:transparent;border:2px solid var(--amber);color:var(--amber);border-radius:99px;padding:5px 14px;font-weight:700;font-size:13px}
+#toTop{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:#fff;display:none;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#toTop.on{display:grid}
+#toTop svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+/* icons in menu, page heads, footer, emergency cards */
+.menu a{display:inline-flex;gap:7px;align-items:center}
+.menu a svg,.flinks svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.phico{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin-bottom:14px;color:#fff}
+.phico svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+footer{text-align:left}
+.fgrid{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:32px;text-align:left}
+@media(max-width:860px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+footer .fgrid>div{min-width:0}
+footer .fgrid b{font-family:var(--f-display);font-size:17px;margin-bottom:8px}
+.flinks{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+.flinks a{display:flex;gap:8px;align-items:center;color:#C5D5F2;text-decoration:none;font-size:14px}
+.flinks a:hover{color:#fff;text-decoration:underline}
+.fteam{list-style:none;display:grid;gap:6px}
+.fteam li{color:#fff;font-weight:600}
+.fteam span{display:block;color:#9FB4D6;font-weight:400;font-size:12.5px;letter-spacing:.03em}
+.fsmall{max-width:1120px;margin:26px auto 0;border-top:1px solid rgba(255,255,255,.15);padding-top:16px;font-size:13px;color:#9FB4D6;text-align:center}
+.emg{display:flex;gap:14px;align-items:center}
+.emg .ico{margin:0;flex:none}
+.emg b{display:block;font-family:var(--f-display);font-size:24px;color:var(--blue)}
+.emg span{font-size:14px;color:var(--muted)}
+/* platform badges and pictures */
+.pbadge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff;margin-bottom:14px}
+.pbadge svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pb-whatsapp{background:#1E8E5A}.pb-facebook{background:#2F5FD0}.pb-instagram{background:#C2377F}.pb-tiktok{background:#1B2A40;border:1px solid var(--line)}
+.tab{display:inline-flex;gap:8px;align-items:center}
+.tab svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:34px}
+@media(max-width:700px){.pics{grid-template-columns:minmax(0,1fr)}}
+.pic{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.pic svg{width:100%;max-width:240px;height:auto}
+.pic p{font-weight:700;margin-top:8px;font-size:14.5px}
+.s1{fill:var(--blue-soft)}.s2{fill:var(--blue)}.s3{fill:var(--surface);stroke:var(--blue);stroke-width:3}.s5{fill:var(--green)}.s7{fill:var(--line)}
+.s6{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.s8{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.stxt{font-family:var(--f-display);font-weight:800;font-size:13px;fill:var(--ink);text-anchor:middle}
+/* chatbot */
+#sbBtn{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;background:#1473F0;color:#fff;border:0;border-radius:99px;padding:14px 20px;font-weight:700;font-size:15px;display:flex;gap:8px;align-items:center;box-shadow:0 8px 24px rgba(10,60,160,.45)}
+#sbWin{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;width:370px;height:560px;max-height:calc(100% - 100px);background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 50px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden}
+#sbWin.open{display:flex}
+.sbh{background:var(--navy);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.sbh .t{flex:1;font-weight:700;font-size:14px;line-height:1.25}
+.sbh small{display:block;font-weight:500;color:#8EF0A8;font-size:11px}
+.sbh button{background:rgba(255,255,255,.16);color:#fff;border:0;width:30px;height:30px;border-radius:50%;font-size:15px}
+#sbBody{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.m{max-width:90%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.m.bot{background:var(--blue-soft);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.m.usr{background:var(--blue);color:var(--on-blue);align-self:flex-end;border-bottom-right-radius:4px}
+.m ol,.m ul{padding-left:18px;margin:4px 0}
+.m b{font-weight:700}
+.qb{display:flex;flex-wrap:wrap;gap:6px}
+.qb button{background:var(--surface);border:1.5px solid var(--blue);color:var(--blue);border-radius:99px;padding:6px 11px;font-size:12.5px;font-weight:600}
+.qb button:hover{background:var(--blue);color:var(--on-blue)}
+.sbi{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--surface)}
+.sbi input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;font-size:14px}
+.sbi button{background:var(--blue);color:var(--on-blue);border:0;border-radius:10px;padding:0 16px;font-weight:700}
+@media(max-width:480px){#sbWin{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));width:auto;height:calc(100% - 90px)}}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:99px;font-size:13px;font-weight:600;z-index:100}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="row">
+    <a class="brand" href="#home" aria-label="CyberShield Pakistan home">
+      <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#1473F0"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="bn">CyberShield<br>Pakistan</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#home">Home</a><a href="#checker">Scam Checker</a><a href="#social">Social Media Safety</a><a href="#bank">Bank &amp; Scam Calls</a><a href="#sim">SIM &amp; CNIC</a><a href="#business">Daraz &amp; Business</a><a href="#seniors">Senior Citizens</a><a href="#schools">Schools &amp; Family</a><a href="#complain">Complain Center</a><a href="#helplines">Helplines</a><a href="#quiz">Safety Quiz</a><a href="#team">Our Team</a>
+    </nav>
+    <a class="sos" href="#helplines"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Helpline 1799</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<div class="view" id="v-home">
+  <div class="hero full"><div class="wrap">
+    <span class="badge">Pakistan’s Trusted Digital Safety Platform</span>
+    <h1>Are You Safe Online? Take a 30-Second Safety Test</h1>
+    <p>Protect yourself from scams, hacks, and fraud. Run a free safety check now to secure your accounts and personal data.</p>
+    <div class="btns">
+      <a class="btn blue" href="#checker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Check Scam</a>
+      <a class="btn white" href="#complain"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>My Account Hacked</a>
+      <a class="btn ghost" href="#complain"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22V3"/><path d="M4 4h13l-2 4 2 4H4"/></svg>Report &amp; Complain</a>
+    </div>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="head" style="text-align:center;margin-left:auto;margin-right:auto"><h2>Our Protection Services</h2><p>Comprehensive digital protection tailored for Pakistani users and businesses</p></div>
+    <div class="grid g4" id="services"></div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="head"><h2>Quick help</h2><p>Jump straight to what you need.</p></div>
+    <div class="card" style="display:grid;gap:8px;margin-bottom:18px"><label for="quick" style="font-weight:700">What happened to you? Pick one and ShieldBot gives you the first steps.</label>
+      <select id="quick">
+        <option value="">Choose a situation</option>
+        <option>Someone asked for my OTP</option>
+        <option>My WhatsApp was hacked</option>
+        <option>I sent money to a scammer</option>
+        <option>I am being blackmailed</option>
+        <option>Someone is using my CNIC or SIM</option>
+        <option>Someone opened a business in my name</option>
+      </select>
+    </div>
+    <div class="quick" id="quick2"></div>
+    <div class="tipbox" style="margin-top:20px"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><h3>Safety tip</h3><p id="tipText" style="color:var(--ink)"></p><button type="button" id="tipNext">Next tip</button></div></div>
+  </div></section>
+
+  <section style="background:var(--surface)" class="full"><div class="wrap">
+    <div class="head"><h2>How it works</h2><p>Three steps. Free and private.</p></div>
+    <ol class="steps">
+      <li><h3>Check</h3><p>Paste a message into the Scam Checker or ask ShieldBot any question, even a simple hello.</p></li>
+      <li><h3>Act</h3><p>Follow a short action plan: what to do in the first minute, and what never to do.</p></li>
+      <li><h3>Report</h3><p>Call or message the right authority. Every helpline listed here comes with when and why to use it.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="band full"><div class="wrap">
+    <div class="head"><h2>Scams we see most in Pakistan</h2><p>Scammers copy trusted names: banks, mobile wallets, government schemes and courier companies.</p></div>
+    <div class="pillrow"><span>OTP theft</span><span>WhatsApp code hijack</span><span>Fake BISP and prize links</span><span>Fake job and task scams</span><span>Wallet and bank impersonation</span><span>Online shopping fraud</span><span>Blackmail and sextortion</span><span>Fake SIM and CNIC use</span><span>Fake business pages</span></div>
+  </div></section>
+
+  <section><div class="wrap" style="max-width:820px">
+    <div class="head"><h2>Emergency numbers</h2><p>Save these in your phone. Tap Helplines for when to call each one.</p></div>
+    <div class="grid g2" id="emerg" style="margin-bottom:56px"></div>
+    <div class="head"><h2>Questions people ask</h2></div>
+    <details class="faq"><summary>Is this website free?</summary><div>Yes. Every guide, the scam checker and ShieldBot are free.</div></details>
+    <details class="faq"><summary>Do I need to log in?</summary><div>No account is needed.</div></details>
+    <details class="faq"><summary>Is my data saved?</summary><div>No. The checker and chatbot run inside your browser. Nothing you type is sent to us or stored. Still, never type passwords, OTPs, card numbers or your CNIC number into any chat or website you are unsure about.</div></details>
+    <details class="faq"><summary>What is ShieldBot?</summary><div>A helper chatbot at the bottom right of every page. Ask it what to do after a scam call, how to lock a social account, or which helpline to use.</div></details>
+    <details class="faq"><summary>My account was hacked. What now?</summary><div>Open <a href="#complain" style="color:var(--blue);font-weight:700">Complain Center</a> for the 60-second plan.</div></details>
+    <details class="faq"><summary>Are the helpline numbers correct?</summary><div>Numbers were checked against official and news sources in November 2026. Agencies sometimes change numbers or hours, so confirm on the official website if a call does not connect.</div></details>
+  </div></section>
+</div>
+
+<!-- CHECKER -->
+<div class="view" id="v-checker">
+  <div class="ph full"><div class="wrap"><h1>Scam Message Checker</h1><p>Paste a text, WhatsApp message, email or link. The tool looks for common scam patterns. It runs in your browser and saves nothing.</p></div></div>
+  <section><div class="wrap" style="max-width:820px">
+    <label for="ctext" style="font-weight:700;display:block;margin-bottom:8px">Message or link</label>
+    <textarea id="ctext" placeholder="Example: Congratulations! You won Rs 50,000 from BISP. Send your CNIC and OTP to claim."></textarea>
+    <div class="btns" style="margin-top:14px"><button class="btn blue" id="cgo" style="color:#fff;border:0">Check now</button><button class="btn line" id="cclr">Clear</button></div>
+    <div class="ex" id="cex"></div>
+    <div id="cres" aria-live="polite"></div>
+    <div class="note" style="margin-top:22px"><b>Important:</b> this tool gives a warning level, not a guarantee. A message that looks clean can still be a scam. If anyone asks for money, an OTP, a PIN or a password, treat it as a scam.</div>
+  </div></section>
+</div>
+
+<!-- SOCIAL -->
+<div class="view" id="v-social">
+  <div class="ph full"><div class="wrap"><h1>WhatsApp, Facebook, Instagram &amp; TikTok</h1><p>The scams on each app, why each privacy setting helps, and where to tap to switch it on.</p></div></div>
+  <section><div class="wrap">
+    <div class="tabs" role="tablist" id="ptabs"></div>
+    <div id="pbody"></div>
+  </div></section>
+</div>
+
+<!-- BANK -->
+<div class="view" id="v-bank">
+  <div class="ph full"><div class="wrap"><h1>Bank, Wallet &amp; Scam Calls</h1><p>Fake bank officers, fake police, wallet reversal tricks and loan apps. What to do, what never to do, and who to call.</p></div></div>
+  <section><div class="wrap">
+    <div class="note" style="margin-bottom:22px"><b>Golden rule:</b> a real bank, JazzCash, Easypaisa, FBR, NADRA, the police or the FIA will never ask for your OTP, PIN, password or full card number on a call or message. Hang up, then call the number printed on your card or inside your official app.</div>
+    <div id="bankList"></div>
+    <h3 class="sub" style="margin-top:30px">If money already left your account</h3>
+    <ol class="step-list">
+      <li><b>Call your bank or wallet now</b><span>Use the number on your card or in the official app. Ask them to block the transaction, freeze the account and log a fraud complaint. Note the reference number.</span></li>
+      <li><b>Change passwords and PINs</b><span>Change your banking app password, ATM PIN and email password from a safe device.</span></li>
+      <li><b>Report to NCCIA</b><span>Call 1799 or file on the NCCIA website. Bring screenshots, transaction IDs, phone numbers and account numbers used by the scammer.</span></li>
+      <li><b>Escalate if the bank does not help</b><span>State Bank of Pakistan Consumer Protection: call 111-727-273 or use the Sunwai complaint portal and app. Banks must respond to fraud complaints within the SBP timelines.</span></li>
+    </ol>
+  </div></section>
+</div>
+
+<!-- SIM -->
+<div class="view" id="v-sim">
+  <div class="ph full"><div class="wrap"><h1>Protect Your SIMs &amp; CNIC</h1><p>Criminals use SIMs registered on other people's CNICs. Check yours every few months. It takes one minute.</p></div></div>
+  <section><div class="wrap">
+    <div class="two">
+      <div>
+        <h3 class="sub">Check SIMs registered on your CNIC</h3>
+        <ol class="step-list">
+          <li><b>By SMS</b><span>Type your 13-digit CNIC without dashes or spaces. Send it to <b style="display:inline">668</b> from any network. You get the number of SIMs per operator. Normal SMS charges apply.</span></li>
+          <li><b>Online</b><span>Open the PTA SIM information page at cnic.sims.pk, enter your CNIC and submit. Use only this address. Fake lookalike sites exist.</span></li>
+          <li><b>Found a SIM you do not recognise?</b><span>Contact that operator's helpline with your original CNIC, ask them to block it as unauthorised, and note the complaint number.</span></li>
+          <li><b>No fix from the operator?</b><span>Complain to PTA: call 0800-55055 or use complaint.pta.gov.pk.</span></li>
+          <li><b>Used by criminals?</b><span>If a SIM in your name was used in a crime or fraud, report it to NCCIA on 1799 so the record shows you reported it.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="sub">Other useful short codes</h3>
+        <div class="tw"><table style="min-width:0"><tbody>
+          <tr><td class="num">668</td><td>Send your CNIC to see SIMs registered on it.</td></tr>
+          <tr><td class="num">8484</td><td>Send a phone's IMEI to check whether the device is registered with PTA.</td></tr>
+          <tr><td class="num">667</td><td>Send MNP to check number portability details.</td></tr>
+        </tbody></table></div>
+        <h3 class="sub" style="margin-top:26px">Keep your CNIC safe</h3>
+        <div class="blk g"><h4>Do</h4><ul><li>Share a CNIC copy only when required, and write the purpose and date across it.</li><li>Keep SIM biometric receipts and cut up old SIMs.</li><li>Block and report a lost phone or SIM at once.</li><li>Check your credit report for loans you never took. Ask your bank how to request your eCIB report from the State Bank.</li></ul></div>
+        <div class="blk r" style="margin-top:10px"><h4>Do not</h4><ul><li>Post a photo of your CNIC, passport or SIM packet online.</li><li>Send your CNIC picture to an unknown number, even for a prize or a job.</li><li>Lend your SIM or fingerprint to someone to register their SIM.</li><li>Pay a person to "check SIM owner details". Those are scams.</li></ul></div>
+        <p style="margin-top:14px;color:var(--muted);font-size:14.5px">For a lost, damaged or misused CNIC, contact NADRA on 1777 or visit your nearest NADRA centre.</p>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- BUSINESS -->
+<div class="view" id="v-business">
+  <div class="ph full"><div class="wrap"><h1>Daraz, Online Shopping &amp; Business Protection</h1><p>Avoid shopping fraud. Check your business name before you register. Find and remove anyone using your name.</p></div></div>
+  <section><div class="wrap">
+    <div class="pics" aria-hidden="true">
+      <div class="pic"><svg viewBox="0 0 240 160"><rect class="s7" x="10" y="140" width="220" height="6" rx="3"/><rect class="s3" x="40" y="62" width="160" height="78"/><rect class="s2" x="30" y="40" width="36" height="26"/><rect class="s1" x="66" y="40" width="36" height="26"/><rect class="s2" x="102" y="40" width="36" height="26"/><rect class="s1" x="138" y="40" width="36" height="26"/><rect class="s2" x="174" y="40" width="36" height="26"/><rect class="s2" x="105" y="92" width="30" height="48"/><rect class="s1" x="52" y="82" width="38" height="32"/><rect class="s1" x="150" y="82" width="38" height="32"/><rect class="s5" x="82" y="12" width="76" height="20" rx="4"/><text class="stxt" x="120" y="26" style="fill:#fff">YOUR NAME</text></svg><p>Pick a name that is free</p></div>
+      <div class="pic"><svg viewBox="0 0 240 160"><rect class="s3" x="22" y="34" width="140" height="82" rx="10"/><rect class="s7" x="40" y="54" width="104" height="9" rx="4"/><rect class="s7" x="40" y="74" width="70" height="9" rx="4"/><text class="stxt" x="92" y="106">NAME?</text><circle class="s1" cx="165" cy="96" r="34" style="stroke:var(--blue);stroke-width:5"/><path class="s6" d="m190 122 28 28" style="stroke-width:8"/><path class="s8" d="m151 96 11 11 20-22" style="stroke:var(--green)"/></svg><p>Search your name everywhere</p></div>
+      <div class="pic"><svg viewBox="0 0 240 160"><rect class="s3" x="56" y="30" width="128" height="86" rx="8"/><rect class="s2" x="30" y="116" width="180" height="14" rx="7"/><path class="s2" d="M120 44 148 55V76c0 15-12 24-28 29C104 100 92 91 92 76V55z"/><path class="s8" d="m107 76 10 10 17-19"/></svg><p>Report and remove fakes</p></div>
+    </div>
+    <h3 class="sub">1. Before you open a business: check the name</h3>
+    <ol class="step-list">
+      <li><b>Search the SECP name database</b><span>Open the Securities and Exchange Commission of Pakistan website (secp.gov.pk), go to eServices and use Name Availability Search. Try spelling variations, because similar names can be refused.</span></li>
+      <li><b>Check other places</b><span>Search the Intellectual Property Organisation of Pakistan for trademarks, check the domain name and search Facebook, Instagram and Google Maps for the same name.</span></li>
+      <li><b>Reserve the name and register</b><span>SECP reserves approved names for a limited time. Complete incorporation inside that window. SECP helpline: 0800-88008. Business Care on WhatsApp: 0306-9365625.</span></li>
+      <li><b>Protect the brand early</b><span>Register the trademark, claim the same handle on every social app and register the domain.</span></li>
+    </ol>
+    <h3 class="sub" style="margin-top:34px">2. Has someone opened a branch or business in your name?</h3>
+    <div class="grid g2">
+      <div class="card"><h3>How to find out</h3><ul style="padding-left:18px;color:var(--muted);font-size:14.5px;display:grid;gap:5px"><li>Search your business and personal name on Google, Facebook, Instagram, TikTok, Daraz, OLX and Google Maps.</li><li>Ask SECP (0800-88008) whether any company or business is registered with your name or CNIC.</li><li>Check that your NTN and tax status on the FBR website are as you expect.</li><li>Run the 668 SIM check on your CNIC.</li><li>Ask customers to send screenshots of anything suspicious.</li></ul></div>
+      <div class="card"><h3>How to shut it down</h3><ul style="padding-left:18px;color:var(--muted);font-size:14.5px;display:grid;gap:5px"><li>Fake page or profile: report it inside the app as impersonation, then file with NCCIA on 1799.</li><li>Company registered in a confusingly similar name: complain to SECP, 0800-88008, complaints@secp.gov.pk.</li><li>Trademark misuse: send a notice and file with the IPO of Pakistan. A lawyer can help.</li><li>Fake NTN or tax use: report to FBR.</li><li>Fraud in your name: file an FIR with police (call 15) and keep the copy.</li></ul></div>
+    </div>
+    <h3 class="sub" style="margin-top:34px">3. Online shopping fraud</h3>
+    <div id="shopList"></div>
+  </div></section>
+</div>
+
+<!-- SENIORS -->
+<div class="view" id="v-seniors">
+  <div class="ph full"><div class="wrap"><h1>Senior Citizens: Stay Safe on the Phone</h1><p>Large text. Simple rules. Share this page with your parents and grandparents.</p></div></div>
+  <section><div class="wrap old" style="max-width:860px">
+    <div class="oi"><b>Rule 1. Never tell anyone your OTP.</b>An OTP is a secret code. No bank, no police officer and no company needs it from you.</div>
+    <div class="oi"><b>Rule 2. If a call scares you, hang up.</b>Scammers say your account will close or you will be arrested. Real offices do not threaten you on the phone.</div>
+    <div class="oi"><b>Rule 3. You never pay money to receive money.</b>A real prize or grant does not need a fee, a tax payment or a code.</div>
+    <div class="oi"><b>Rule 4. Call your family first.</b>Before you send any money, talk to a son, daughter or trusted person.</div>
+    <h3 style="font-size:26px;margin:26px 0 6px">Tap what is happening</h3>
+    <div class="big3">
+      <button data-big="otp" aria-pressed="false">Someone asks for my code</button>
+      <button data-big="win" aria-pressed="false">A call says I won money</button>
+      <button data-big="bank" aria-pressed="false">A caller says they are from my bank or police</button>
+    </div>
+    <div id="bigmsg" hidden></div>
+    <div class="btns"><button class="btn blue" id="askbot" style="color:#fff;border:0;font-size:20px;padding:16px 24px">Ask ShieldBot a question</button><a class="btn line" href="#helplines" style="font-size:20px;padding:16px 24px">See helpline numbers</a></div>
+    <p style="margin-top:22px;color:var(--muted)">Police emergency: <b>15</b>. Cybercrime: <b>1799</b>. Ambulance: Edhi <b>115</b>, Rescue <b>1122</b>.</p>
+  </div></section>
+</div>
+
+<!-- SCHOOLS -->
+<div class="view" id="v-schools">
+  <div class="ph full"><div class="wrap"><h1>Schools &amp; Family Safety</h1><p>Lessons for students, a checklist for teachers and parents, and where to get help when a child is harmed online.</p></div></div>
+  <section><div class="wrap">
+    <div class="head"><h2>Six lessons for students</h2></div>
+    <div class="grid g3" id="lessons"></div>
+    <div class="two" style="margin-top:34px">
+      <div>
+        <h3 class="sub">Checklist for parents and teachers</h3>
+        <ol class="step-list">
+          <li><b>Keep devices in shared spaces</b><span>Younger children should use phones and tablets where an adult can see.</span></li>
+          <li><b>Set accounts to private</b><span>Use the privacy steps in the Social Media Safety guide. On TikTok use Family Pairing.</span></li>
+          <li><b>Agree the "tell me" rule</b><span>A child will not be punished for reporting a scary message, a threat or a stranger.</span></li>
+          <li><b>Teach "stop, block, tell"</b><span>Stop replying, block the account, tell a trusted adult. Save screenshots first.</span></li>
+          <li><b>Add the school to the plan</b><span>Name one teacher to receive cyberbullying reports and agree what happens next.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="sub">If a child is harmed or threatened online</h3>
+        <div class="blk r"><h4>Immediately</h4><ul><li>Do not delete the evidence. Take screenshots with the account name, link and time.</li><li>Do not pay or send more photos. Paying makes demands grow.</li><li>Block the account and report it inside the app.</li></ul></div>
+        <div class="blk" style="margin-top:10px"><h4>Report to</h4><ul><li>NCCIA cybercrime helpline <b>1799</b> or helpdesk@nccia.gov.pk</li><li>Child Protection helpline <b>1121</b> (coverage differs by province)</li><li>Madadgaar helpline <b>1098</b> for children and women in distress</li><li>Police <b>15</b> if the child is in danger now</li></ul></div>
+        <p style="margin-top:12px;color:var(--muted);font-size:14.5px">Is your child involved in blackmail or sextortion? Ask ShieldBot "I am being blackmailed" for the full steps.</p>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- COMPLAIN -->
+<div class="view" id="v-complain">
+  <div class="ph full"><div class="wrap"><h1>Complain Center</h1><p>Your first minute, your first hour, and how to file an official complaint.</p></div></div>
+  <section><div class="wrap">
+    <div class="panic" id="panic">
+      <h2>Account hacked? Do this in 60 seconds</h2>
+      <ol>
+        <li>Open the app or site's own "forgot password" page and reset your password. Use a new, long one.</li>
+        <li>Change the password of the email address linked to that account first, if you can.</li>
+        <li>Turn on two-step verification using an authenticator app or the app's own security option.</li>
+        <li>Log out of all other devices from the security or login-activity page.</li>
+        <li>Warn friends and family that messages from you may be fake.</li>
+        <li>If money or blackmail is involved, call <b>1799</b> and your bank straight away.</li>
+      </ol>
+    </div>
+    <div class="two">
+      <div>
+        <h3 class="sub">How to file a cybercrime complaint</h3>
+        <ol class="step-list">
+          <li><b>Collect evidence</b><span>Screenshots of chats, profile links, phone numbers, bank or wallet transaction IDs, dates and times. Do not edit them.</span></li>
+          <li><b>Call or write to NCCIA</b><span>Helpline 1799. Email helpdesk@nccia.gov.pk. You can also use the complaint form on the official NCCIA website or visit your nearest NCCIA circle office. The FIA cyber wing was merged into NCCIA, so the FIA no longer takes cybercrime complaints.</span></li>
+          <li><b>Police can start it too</b><span>Police helpline 15 is linked with NCCIA, so cybercrime complaints you make through 15 are forwarded to the right NCCIA office.</span></li>
+          <li><b>Save your complaint number</b><span>You need it for follow-up. Follow up by phone or email if you hear nothing in a few working days.</span></li>
+          <li><b>Tell the platform and your bank</b><span>Report the account inside the app and inform your bank or wallet company at the same time.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="sub">Who handles what</h3>
+        <div class="tw"><table style="min-width:420px"><thead><tr><th>Problem</th><th>Go to</th></tr></thead><tbody>
+          <tr><td>Online fraud, hacking, blackmail, fake profiles</td><td>NCCIA, 1799</td></tr>
+          <tr><td>Money taken from a bank account or wallet</td><td>Your bank first, then SBP 111-727-273</td></tr>
+          <tr><td>Unknown SIMs or telecom fraud</td><td>Operator, then PTA 0800-55055</td></tr>
+          <tr><td>Fake company or name misuse</td><td>SECP 0800-88008</td></tr>
+          <tr><td>CNIC lost or misused</td><td>NADRA 1777</td></tr>
+          <tr><td>Danger now, threats</td><td>Police 15</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- HELPLINES -->
+<div class="view" id="v-helplines">
+  <div class="ph full"><div class="wrap"><h1>Helplines</h1><p>Which number to call, when, and what to say. Checked in November 2026.</p></div></div>
+  <section><div class="wrap">
+    <div class="note" style="margin-bottom:20px"><b>Note:</b> number <b>1166</b>, which appeared on an earlier version of this site, is the health helpline (Sehat Tahaffuz), not a cybercrime line. The cybercrime number is <b>1799</b>.</div>
+    <div class="tw"><table><thead><tr><th>Number</th><th>Who</th><th>Call when</th><th>Tips</th></tr></thead><tbody id="hl"></tbody></table></div>
+    <h3 class="sub" style="margin-top:32px">How to use a helpline well</h3>
+    <ol class="step-list">
+      <li><b>Keep your evidence open</b><span>Have screenshots, numbers and transaction IDs ready before you call.</span></li>
+      <li><b>Say it in one sentence first</b><span>"I sent Rs 20,000 to a wallet number after a fake bank call today at 3 pm."</span></li>
+      <li><b>Ask for a complaint number</b><span>Write down the number, the date and the name of the person.</span></li>
+      <li><b>Never give an OTP or PIN to a helpline caller</b><span>If someone calls you back claiming to be a helpline, hang up and dial the number from this page.</span></li>
+      <li><b>If the line does not connect</b><span>Try the email or website listed by the agency, or go to the nearest office. Hours and numbers can change.</span></li>
+    </ol>
+  </div></section>
+</div>
+
+<!-- QUIZ -->
+<div class="view" id="v-quiz">
+  <div class="ph full"><div class="wrap"><h1>Safety Quiz</h1><p>Eight questions. See how well you spot scams.</p></div></div>
+  <section><div class="wrap" style="max-width:780px"><div id="quizBox"></div><div class="btns" style="margin-top:8px"><button class="btn blue" id="qsub" style="color:#fff;border:0">See my score</button><button class="btn line" id="qreset">Start again</button></div><div id="qres" aria-live="polite"></div></div></section>
+</div>
+
+<!-- TEAM -->
+<div class="view" id="v-team">
+  <div class="ph full"><div class="wrap"><h1>Our Team</h1><p>The students who built CyberShield Pakistan.</p></div></div>
+  <section><div class="wrap">
+    <div class="grid g3" id="teamGrid"></div>
+    <div class="uni"><small>Developed at</small><p>Superior University, Lahore</p><p>Supervised by Miss Farah Taj</p><small>BSITM, Fall 2026 class project</small></div>
+  </div></section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <b>CyberShield Pakistan</b>
+      <p>A free safety guide for scams, hacked accounts, SIM and CNIC misuse and business name theft.</p>
+      <p style="margin-top:10px">In an emergency call <b style="display:inline">15</b>. For cybercrime call <b style="display:inline">1799</b>.</p>
+    </div>
+    <div>
+      <b>Explore</b>
+      <div class="flinks" id="flinks"></div>
+    </div>
+    <div>
+      <b>Developed by</b>
+      <ul class="fteam">
+        <li>Rubab Bashir <span>SU92-BSITM-F26-008</span></li>
+        <li>Zunaira Mehmood <span>SU92-BSITM-F26-040</span></li>
+        <li>Hifza Ajmal <span>SU92-BSITM-F26-054</span></li>
+        <li>Yashfa Irfan <span>SU92-BSITM-F26-018</span></li>
+      </ul>
+      <p style="margin-top:12px;line-height:1.7"><b style="display:inline;font-size:14px;color:#fff">Supervisor:</b> Miss Farah Taj<br><b style="display:inline;font-size:14px;color:#fff">University:</b> Superior University, Lahore</p>
+    </div>
+  </div>
+  <p class="fsmall">General guidance only, not legal advice. Confirm details with the official agency. Helpline details checked November 2026.</p>
+</footer>
+
+<button id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+<div id="sbTip" aria-hidden="true">Need help? Ask me!</div>
+<button id="sbBtn" aria-controls="sbWin" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg>Ask ShieldBot</button>
+<section id="sbWin" role="dialog" aria-label="ShieldBot chat" style="padding:0">
+  <div class="sbh"><div class="t">ShieldBot<small>Online. Free safety helper</small></div><button id="sbX" aria-label="Close chat">&#10005;</button></div>
+  <div id="sbBody" aria-live="polite"></div>
+  <form class="sbi" id="sbForm"><input id="sbIn" type="text" autocomplete="off" placeholder="Type a question, or say hi" aria-label="Your question"><button type="submit">Send</button></form>
+</section>
+
+<script>
+/* ===== SETTINGS: edit these when the real names arrive ===== */
+const TEAM=[
+  {name:'Rubab Bashir',roll:'SU92-BSITM-F26-008'},
+  {name:'Zunaira Mehmood',roll:'SU92-BSITM-F26-040'},
+  {name:'Hifza Ajmal',roll:'SU92-BSITM-F26-054'},
+  {name:'Yashfa Irfan',roll:'SU92-BSITM-F26-018'}
+];
+
+/* ===== helpers ===== */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1800)}
+function copyText(t){try{navigator.clipboard.writeText(t).then(()=>toast('Number copied'),()=>toast('Number: '+t))}catch(e){toast('Number: '+t)}}
+const ICON={
+ shield:'<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/>',
+ chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/>',
+ bank:'<path d="M3 10 12 4l9 6"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/>',
+ sim:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+ shop:'<path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/>',
+ elder:'<circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/>',
+ school:'<path d="m2 9 10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>',
+ flag:'<path d="M4 22V3"/><path d="M4 4h13l-2 4 2 4H4"/>'
+};
+const ic=n=>`<span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg></span>`;
+
+/* ===== routing ===== */
+const VIEWS=['home','checker','social','bank','sim','business','seniors','schools','complain','helplines','quiz','team'];
+function route(){
+  let h=(location.hash||'#home').slice(1);
+  if(!VIEWS.includes(h)) h='home';
+  $$('.view').forEach(v=>v.classList.toggle('show',v.id==='v-'+h));
+  $$('.menu a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+  $('#menu').classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
+  window.scrollTo(0,0);
+}
+addEventListener('hashchange',route);
+$('#burger').onclick=()=>{const o=$('#menu').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+
+/* ===== home ===== */
+const SP={
+ chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/>',
+ cam:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+ bank:'<path d="M3 10 12 4l9 6"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/>',
+ shop:'<path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/>',
+ brief:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/>',
+ fam:'<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-2a5 5 0 0 1 10 0v2"/><path d="M15 15a4 4 0 0 1 6 4v1"/>',
+ grad:'<path d="m2 9 10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>',
+ doc:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>'
+};
+const SERVICES=[
+ ['chat','#1E8E5A','WhatsApp Safety','Secure chats, block scams and fake links','#social','whatsapp'],
+ ['cam','linear-gradient(135deg,#C2377F,#2F5FD0)','Facebook &amp; Instagram','Protect social accounts from hacking','#social','facebook'],
+ ['bank','#5B3FA6','Bank &amp; JazzCash','Safe mobile banking and payment security','#bank',''],
+ ['shop','#C75F12','Daraz Protection','Secure online shopping and seller fraud check','#business',''],
+ ['brief','#1B2A40','Business Protection','Safeguard your business from cyber threats','#business',''],
+ ['fam','#0E7C86','Family Safety','Keep kids and family safe online','#schools',''],
+ ['grad','#0B63E5','Security School','Free tips and lessons on online safety','#schools',''],
+ ['doc','#2F5FD0','Complain Center','File and follow up on cybercrime complaints','#complain','']
+];
+$('#services').innerHTML=SERVICES.map(s=>`<a class="card svc" href="${s[4]}"${s[5]?` data-plat="${s[5]}"`:''}><span class="pbadge" style="background:${s[1]}"><svg viewBox="0 0 24 24" aria-hidden="true">${SP[s[0]]}</svg></span><h3>${s[2]}</h3><p>${s[3]}</p></a>`).join('');
+$('#services').addEventListener('click',e=>{const a=e.target.closest('[data-plat]');if(a){curP=a.dataset.plat;drawP()}});
+
+/* ===== helplines ===== */
+const HL=[
+ ['1799','NCCIA cybercrime helpline','Online fraud, hacking, blackmail, fake profiles, identity theft.','Also email helpdesk@nccia.gov.pk or call 051-9106691. Have screenshots ready.'],
+ ['15','Police emergency','You or someone else is in danger now, or you want an FIR.','Cybercrime reports through 15 are passed to NCCIA. Works nationwide, all day.'],
+ ['111-727-273','State Bank of Pakistan consumer helpline','Your bank did not fix a fraud or card problem.','Complain to your bank first. Use SBP Sunwai portal or app for a written complaint.'],
+ ['0800-55055','PTA toll-free helpline','Unknown SIMs, telecom fraud, spam calls, blocked phone issues.','Online: complaint.pta.gov.pk. Check SIMs with 668 first.'],
+ ['0800-88008','SECP toll-free helpline','Company name check, fake company, name misuse.','Weekday office hours. Email complaints@secp.gov.pk. WhatsApp Business Care 0306-9365625.'],
+ ['1777','NADRA helpline','Lost, misused or wrong CNIC.','Visit a NADRA centre with your original CNIC where needed.'],
+ ['1122','Rescue 1122','Medical or fire emergency in covered areas.','Coverage varies by district.'],
+ ['115','Edhi ambulance','Ambulance needed.','Use with 1122 where available.'],
+ ['1121','Child Protection helpline','A child is abused, trafficked or exploited, including online.','Coverage differs by province.'],
+ ['1098','Madadgaar helpline','Children and women facing violence or abuse.','Confidential support and referrals.'],
+ ['1099','Ministry of Human Rights helpline','Legal advice for rights violations, harassment.','WhatsApp support also available through the ministry.'],
+ ['668','PTA SIM check (SMS)','See how many SIMs are on your CNIC.','SMS your 13-digit CNIC with no dashes. Standard SMS charges.'],
+ ['8484','PTA device check (SMS)','Check if a phone is registered with PTA.','SMS the 15-digit IMEI.']
+];
+$('#hl').innerHTML=HL.map(r=>`<tr><td class="num">${esc(r[0])}<button class="copy" data-copy="${esc(r[0])}">Copy</button></td><td><b>${esc(r[1])}</b></td><td>${esc(r[2])}</td><td style="color:var(--muted)">${esc(r[3])}</td></tr>`).join('');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copyText(b.dataset.copy)});
+
+/* ===== social ===== */
+const mk=(t,tag,w,f,d)=>`<details class="item"><summary>${t}<span class="tag ${tag[0]}">${tag[1]}</span></summary><div class="body"><div class="blk"><h4>How it works</h4>${w}</div><div class="blk r"><h4>Warning signs</h4>${f}</div><div class="blk g"><h4>What to do</h4>${d}</div></div></details>`;
+const PL={
+whatsapp:{label:'WhatsApp',scams:[
+ mk('Verification code hijack',['r','Very common'],'A "friend" says they sent their code to your number by mistake and asks you to forward it. The code is really your WhatsApp login code. Once you share it, the scammer owns your account.','A six-digit code you did not request. A contact asking you to forward it.','<ol><li>Never share any code.</li><li>If you did, install WhatsApp again, log in with your number and enter the new code to take the account back.</li><li>Turn on two-step verification.</li></ol>'),
+ mk('"Hi Mum, new number" and family money requests',['r','Common'],'A message from an unknown number claims to be your child or relative with a new phone and urgently needs money.','New number, urgency, a bank account that does not match the person.','<ol><li>Call the old number.</li><li>Ask a question only the real person can answer.</li><li>Do not send money until verified.</li></ol>'),
+ mk('Fake job and "like to earn" tasks',['r','Common'],'You are offered easy daily pay for liking videos or doing tasks. First tasks pay a little. Then you must deposit money to unlock larger earnings, which never come back.','Unknown recruiter, pay for simple tasks, deposit demanded, Telegram group.','<ol><li>Stop and do not deposit.</li><li>Save the chat and payment proof.</li><li>Report to NCCIA 1799.</li></ol>'),
+ mk('Prize, BISP and grant links',['r','Common'],'A message says you won a prize or a government grant and sends a link to "register" with your CNIC, bank details or an OTP.','Link not on an official .gov.pk domain, a fee, a code request.','<ol><li>Do not tap the link.</li><li>Check on the official website or the agency helpline.</li><li>Delete and block.</li></ol>'),
+ mk('Blackmail video calls',['r','Serious'],'A stranger starts a friendly video chat that turns intimate. The call is recorded and used to demand money, with a threat to send it to your contacts.','Unknown woman or man starts a video call, quickly asks you to undress or share photos.','<ol><li>Do not pay. Payment brings more demands.</li><li>Block, report in the app and keep screenshots.</li><li>Call NCCIA 1799.</li></ol>'),
+ mk('Fake apps (APK files) and group invites',['r','Common'],'A file named like a bank app, courier update or wedding invitation is sent as an APK. Installing it can read your SMS and steal OTPs.','Any file ending in .apk sent in chat, "update your app" links.','<ol><li>Never install apps from chat files.</li><li>Use Google Play or the App Store only.</li><li>If installed, uninstall it, change bank passwords and call your bank.</li></ol>')
+ ],priv:[
+ ['Two-step verification','Settings, Account, Two-step verification, Turn on','Adds a PIN that stops a thief who gets your SMS code.'],
+ ['Last seen, profile photo, About','Settings, Privacy, set each to My contacts','Strangers cannot study your routine or copy your photo for fake profiles.'],
+ ['Who can add you to groups','Settings, Privacy, Groups, set to My contacts','Stops scam group invites.'],
+ ['Silence unknown callers','Settings, Privacy, Calls, Silence unknown callers','Reduces blackmail video calls and spam.'],
+ ['Media auto-download','Settings, Storage and data, turn off auto-download','Stops harmful files and images saving to your phone.'],
+ ['Check linked devices','Settings, Linked devices, log out any device you do not know','Removes spies who connected through a QR code.'],
+ ['Chat lock and disappearing messages','Open a chat, tap the name, choose Chat lock or Disappearing messages','Protects private chats if someone borrows your phone.'],
+ ['Run Privacy Checkup','Settings, Privacy, Privacy Checkup','Walks you through the main settings in one place.']
+ ]},
+facebook:{label:'Facebook',scams:[
+ mk('Fake giveaways and prize pages',['r','Common'],'A page copies a brand and promises prizes if you share, comment and send details.','New page, many typos, asks for CNIC or a fee.','<ol><li>Do not share or enter details.</li><li>Report the page for scam.</li></ol>'),
+ mk('Hacked friend asking for money',['r','Common'],'A friend\'s account messages you about an emergency or easypaisa top-up.','Odd language, rush, wallet number not theirs.','<ol><li>Call your friend.</li><li>Do not send money.</li><li>Tell them to secure their account.</li></ol>'),
+ mk('Marketplace payment scams',['r','Common'],'Buyers send fake payment screenshots or fake courier links. Sellers ask for "token money" and vanish.','Pressure to pay outside the platform, advance payment, link to "receive payment".','<ol><li>Meet in a safe public place.</li><li>Check the real wallet balance, not screenshots.</li><li>Use cash on delivery where possible.</li></ol>'),
+ mk('Fake login and "copyright violation" warnings',['r','Common'],'A message says your page will be deleted and gives a link to a fake login page that steals your password.','Link not on facebook.com, a deadline, threat of closure.','<ol><li>Never log in from a message link.</li><li>Open the app directly and check Support Inbox.</li></ol>')
+ ],priv:[
+ ['Privacy Checkup','Settings and privacy, Privacy Checkup','Guided review of who sees posts and how people find you.'],
+ ['Limit who sees posts','Settings, Privacy, Who can see your future posts: Friends','Keeps personal photos from strangers.'],
+ ['Limit old posts','Settings, Privacy, Limit past posts','Hides years of public posts at once.'],
+ ['Hide friend list','Profile, Friends, Edit privacy: Only me','Stops scammers copying your friends to make clones.'],
+ ['Lock profile (where available)','Profile, three dots, Lock profile','Strangers see only a small part of your profile.'],
+ ['Two-factor authentication','Settings, Accounts Centre, Password and security, Two-factor authentication','Stops logins even with your password.'],
+ ['Login alerts and active sessions','Password and security, Where you are logged in','Lets you log out unknown devices.'],
+ ['Review tags','Settings, Profile and tagging, review tags before they appear','Stops fake posts attached to your name.']
+ ]},
+instagram:{label:'Instagram',scams:[
+ mk('Fake blue tick and brand collaboration',['r','Common'],'A message offers a brand deal or a verified badge and sends a link to a form that steals your login.','Link in the DM, urgency, fee for verification.','<ol><li>Do not tap links in DMs.</li><li>Verify the brand through its official page.</li></ol>'),
+ mk('Sextortion',['r','Serious'],'A stranger befriends you, shares private photos and then threatens to post yours.','Fast friendship, private photos, urgent payment demands.','<ol><li>Do not pay.</li><li>Block and report.</li><li>Keep screenshots and call 1799.</li></ol>'),
+ mk('Hacked account recovery scams',['r','Common'],'Someone promises to recover your hacked account for a fee, then takes your money or data.','Paid recovery service on social media.','<ol><li>Use only the official "Need more help" recovery flow.</li><li>Never pay a stranger.</li></ol>'),
+ mk('Fake shops',['r','Common'],'Pages with stolen photos take advance payment and disappear.','Very low prices, no real reviews, advance payment only.','<ol><li>Search the page name plus "scam".</li><li>Prefer cash on delivery.</li></ol>')
+ ],priv:[
+ ['Private account','Profile, menu, Settings and privacy, Account privacy, Private account','Only approved followers see your posts.'],
+ ['Hide activity status','Settings, Messages and story replies, Show activity status: off','Hides when you are online.'],
+ ['Control who messages you','Settings, Messages and story replies, choose who can message','Reduces unknown DMs.'],
+ ['Hidden Words','Settings, Hidden Words, turn on','Filters abusive messages and comments.'],
+ ['Approve tags manually','Settings, Tags and mentions, Manually approve tags','Stops unwanted tags.'],
+ ['Close Friends','Settings, Close Friends','Share stories with a small trusted group.'],
+ ['Two-factor authentication','Accounts Centre, Password and security, Two-factor authentication','Protects your login.'],
+ ['Check login activity','Accounts Centre, Where you are logged in','Log out unknown devices.']
+ ]},
+tiktok:{label:'TikTok',scams:[
+ mk('Fake coin top-up and gift sites',['r','Common'],'Sites promise cheap TikTok coins or free gifts and steal your login or card details.','Prices far below the in-app price, asks for password.','<ol><li>Buy coins only inside the app.</li><li>Never give your password.</li></ol>'),
+ mk('Like-to-earn tasks',['r','Common'],'You are paid a little for liking videos, then asked to deposit for bigger tasks.','Telegram group, deposit demanded.','<ol><li>Stop and do not pay.</li><li>Report to NCCIA 1799.</li></ol>'),
+ mk('Fake verification and impersonation',['r','Common'],'Accounts copy creators and ask followers for money or login details.','Account name differs slightly, asks you to move to WhatsApp.','<ol><li>Report the account as impersonation.</li><li>Block.</li></ol>'),
+ mk('Bullying and harassment',['b','Support'],'Comments, duets or messages used to bully, often at teenagers.','Repeated hostile messages.','<ol><li>Screenshot.</li><li>Delete comments, block and report.</li><li>Tell a trusted adult.</li></ol>')
+ ],priv:[
+ ['Private account','Profile, menu, Settings and privacy, Privacy, Private account','Only approved followers can watch your videos.'],
+ ['Suggest your account to others: off','Settings and privacy, Privacy, Suggest your account to others','Makes it harder for strangers to find you.'],
+ ['Direct messages','Privacy, Direct messages: Friends or No one','Blocks unknown messages.'],
+ ['Comments, Duet and Stitch','Privacy, set Comments, Duet and Stitch to Friends','Limits who can use your videos.'],
+ ['Downloads','Privacy, Downloads: off','Stops others saving your videos.'],
+ ['2-step verification','Settings, Security and permissions, 2-step verification','Protects your login.'],
+ ['Manage devices','Security and permissions, Manage devices','Remove unknown devices.'],
+ ['Family Pairing','Settings, Family Pairing','Parents can manage screen time and messages for a teenager.']
+ ]}
+};
+let curP='whatsapp';
+const PIC={
+ whatsapp:'<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/>',
+ facebook:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 0 1 10 0v1"/><path d="M15 15a4 4 0 0 1 6 4v1"/>',
+ instagram:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+ tiktok:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/>'
+};
+const picSvg=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${PIC[k]}</svg>`;
+const PBLURB={whatsapp:'Code hijack, fake jobs, blackmail calls.',facebook:'Fake giveaways, hacked friends, marketplace fraud.',instagram:'Fake brand deals, sextortion, fake shops.',tiktok:'Fake coin sites, task scams, bullying.'};
+function drawP(){
+  const p=PL[curP];
+  $('#ptabs').innerHTML=Object.keys(PL).map(k=>`<button class="tab" role="tab" data-p="${k}" aria-selected="${k===curP}">${picSvg(k)}${PL[k].label}</button>`).join('');
+  $('#pbody').innerHTML=`<div class="two"><div><h3 class="sub">Scams on ${p.label}</h3>${p.scams.join('')}</div><div><h3 class="sub">Privacy settings to turn on</h3>${p.priv.map(s=>`<details class="item"><summary>${esc(s[0])}<span class="tag g">Turn on</span></summary><div class="body"><div class="blk"><h4>Where to tap</h4>${esc(s[1])}</div><div class="blk g"><h4>Why it helps</h4>${esc(s[2])}</div></div></details>`).join('')}<p style="color:var(--muted);font-size:13.5px;margin-top:8px">Menu names change between app versions. If you cannot find a setting, use the search bar inside the app's Settings.</p></div></div>`;
+}
+$('#ptabs').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){curP=b.dataset.p;drawP()}});
+drawP();
+
+/* ===== bank list ===== */
+const BANK=[
+ mk('Fake bank officer call',['r','Very common'],'A caller says your card is blocked or someone tried to use it. They ask for your card number, PIN or the OTP "to cancel the transaction".','Caller ID looks official, urgency, asks for OTP or PIN.','<ol><li>Say nothing and hang up.</li><li>Call the number on the back of your card.</li><li>Never press numbers or install an app when asked.</li></ol>'),
+ mk('Fake police, FIA or NCCIA call',['r','Common'],'A caller says you are linked to a crime and must pay or share details to avoid arrest.','Threats, fee demands, video call from a "station".','<ol><li>Hang up.</li><li>Real officers do not take payment by phone.</li><li>Call 15 to verify.</li></ol>'),
+ mk('Wallet "wrong transfer" trick',['r','Very common'],'A message says money was sent to you by mistake and asks you to return it. The original message is fake.','SMS that looks like a wallet message but no balance change.','<ol><li>Check your balance in the official app, not the message.</li><li>Do not send money back.</li></ol>'),
+ mk('Fake courier and tax links',['r','Common'],'An SMS says a parcel or tax refund is waiting and gives a link for card details.','Link not from the real company website.','<ol><li>Do not tap.</li><li>Open the company app or website yourself.</li></ol>'),
+ mk('Instant loan apps',['r','Common'],'Apps lend small amounts then take contacts and photos and harass you and your family.','App asks for contacts, gallery and SMS permissions.','<ol><li>Install only apps from licensed lenders.</li><li>Do not give contact permission.</li><li>If harassed, report to 1799.</li></ol>'),
+ mk('ATM card skimming',['r','Common'],'Devices fitted to an ATM copy your card and PIN.','Loose card slot or hidden camera.','<ol><li>Cover the keypad.</li><li>Use ATMs inside banks.</li><li>Report at once to your bank.</li></ol>')
+];
+$('#bankList').innerHTML=BANK.join('');
+const SHOP=[
+ mk('Pay first, receive nothing',['r','Common'],'Sellers on social media or classified sites ask for advance payment, then vanish.','Prices far below market, only advance accepted.','<ol><li>Use cash on delivery.</li><li>Check the seller account age and reviews.</li></ol>'),
+ mk('Fake parcel and refund links',['r','Common'],'A message claims a failed delivery or refund and leads to a fake page.','Link not on the real platform domain.','<ol><li>Use the shopping app only.</li><li>Never enter card details from an SMS link.</li></ol>'),
+ mk('Fake customer care',['r','Common'],'Scammers post a fake support number online and ask for OTPs to "refund" you.','Support number found in search ads or comments.','<ol><li>Use help inside the official app.</li><li>No refund needs your OTP.</li></ol>')
+];
+$('#shopList').innerHTML=SHOP.join('');
+
+/* ===== lessons ===== */
+const LES=[
+ ['Think before you share','Anything posted can be copied. Do not share your address, school or photos with strangers.'],
+ ['Strangers online are still strangers','A friendly stranger may be an adult pretending. Never meet or send photos.'],
+ ['Passwords are private','Use a long password, never share it, not even with best friends.'],
+ ['Stop, block, tell','If a message scares you, stop replying, block and tell a trusted adult.'],
+ ['Cyberbullying hurts','Do not forward mean messages. Support the person and tell a teacher.'],
+ ['Spot fake offers','Free gifts, game coins and prizes are common traps. Ask an adult first.']
+];
+$('#lessons').innerHTML=LES.map((l,i)=>`<div class="card"><span class="role" style="margin-bottom:10px">Lesson ${i+1}</span><h3>${l[0]}</h3><p>${l[1]}</p></div>`).join('');
+
+/* ===== seniors ===== */
+const BIG={
+ otp:'<b>Do not tell them.</b> Say "no" and hang up. An OTP is a secret code. Nobody who is honest will ask for it. Tell your family.',
+ win:'<b>It is a trick.</b> You never pay money to receive money. Hang up. Do not give your CNIC or bank details. Ask your family.',
+ bank:'<b>Hang up.</b> Banks and the police do not ask for your PIN or OTP and do not threaten you by phone. Call the number on the back of your card, or call your family.'
+};
+$$('[data-big]').forEach(b=>b.onclick=()=>{
+  $$('[data-big]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const m=$('#bigmsg');m.hidden=false;m.innerHTML=BIG[b.dataset.big];m.scrollIntoView({block:'nearest'});
+});
+
+/* ===== checker ===== */
+const RULES=[
+ [/\b(otp|one[- ]time (password|code)|verification code|pin code|\bpin\b)\b/i,3,'Asks for an OTP, PIN or code'],
+ [/\b(cnic|identity card|id card|nic)\b/i,2,'Asks for CNIC details'],
+ [/\b(won|winner|prize|lucky draw|lottery|reward|gift)\b/i,2,'Claims you won a prize or reward'],
+ [/\b(bisp|ehsaas|benazir|grant|subsidy|relief fund)\b/i,2,'Mentions a government scheme or grant'],
+ [/\b(urgent|immediately|within \d+ ?(hours?|minutes?)|last chance|expires?|today only)\b/i,2,'Creates urgency'],
+ [/\b(blocked|suspended|deactivated|closed|will be locked|verify your account|update your account)\b/i,2,'Threatens account closure'],
+ [/\b(send|transfer|deposit|pay)\b.{0,30}\b(rs\.?|pkr|rupees|money|fee|charges|amount)\b/i,3,'Asks you to send money or pay a fee'],
+ [/\b(easypaisa|jazzcash|sadapay|nayapay|upaisa)\b.{0,40}\b(send|transfer|number|account)\b/i,2,'Asks for a wallet transfer'],
+ [/(bit\.ly|tinyurl|t\.co\/|cutt\.ly|rb\.gy|wa\.me\/|\.apk\b|\.xyz\b|\.top\b|\.click\b)/i,3,'Contains a short or suspicious link or an APK file'],
+ [/\b(job|earn|income|per day|daily pay|work from home|like and earn|tasks?)\b.{0,40}\b(rs\.?|\d{4,}|dollar|usd)\b/i,2,'Offers easy money for simple tasks'],
+ [/\b(mistake|by mistake|wrong number|wrongly sent|return the money)\b/i,2,'Wrong-transfer trick'],
+ [/\b(police|fia|nccia|court|arrest|case registered|legal action)\b/i,2,'Threatens arrest or legal action'],
+ [/\b(whatsapp|telegram)\b.{0,30}\b(group|join|message us|contact us)\b/i,1,'Pushes you to a chat group'],
+ [/\b(dear customer|dear user|dear sir\/?madam|valued customer)\b/i,1,'Generic greeting']
+];
+function analyze(t){
+  const hits=RULES.filter(r=>r[0].test(t));
+  const score=hits.reduce((a,r)=>a+r[1],0);
+  return {hits,score};
+}
+function showCheck(t){
+  const box=$('#cres');
+  if(!t.trim()){box.innerHTML='<div class="rbox a"><h3>Nothing to check</h3><p>Paste a message first.</p></div>';return}
+  const {hits,score}=analyze(t);
+  const lv=score>=6?'r':score>=3?'a':'g';
+  const title=lv==='r'?'Very likely a scam':lv==='a'?'Suspicious. Be careful':'No obvious scam pattern found';
+  const adv=lv==='g'?'<p>This does not prove the message is safe. If it asks for money, a code or a password, do not reply.</p>':'<ul><li>Do not reply, tap links or share codes.</li><li>Block the sender.</li><li>If you already shared details, open <a href="#complain" style="color:inherit;font-weight:700">Complain Center</a>.</li><li>Report to NCCIA: 1799.</li></ul>';
+  box.innerHTML=`<div class="rbox ${lv}"><h3>${title}</h3>${hits.length?'<p><b>Why:</b></p><ul>'+hits.map(h=>'<li>'+esc(h[2])+'</li>').join('')+'</ul>':''}${adv}</div>`;
+}
+$('#cgo').onclick=()=>showCheck($('#ctext').value);
+$('#cclr').onclick=()=>{$('#ctext').value='';$('#cres').innerHTML=''};
+const EX=[
+ ['Prize and CNIC','Congratulations! You won Rs 50,000 in the BISP lucky draw. Send your CNIC and OTP now to claim your reward. Urgent!'],
+ ['Bank block','Dear customer, your account will be blocked today. Verify your account at http://bit.ly/bank-verify immediately.'],
+ ['Wrong transfer','Sorry, I sent Rs 5000 to your Easypaisa by mistake. Please return the money to this number.'],
+ ['Normal message','Hi, are we still meeting at 6 pm at the library to study for the exam?']
+];
+$('#cex').innerHTML=EX.map((e,i)=>`<button data-ex="${i}">${esc(e[0])}</button>`).join('');
+$('#cex').onclick=e=>{const b=e.target.closest('[data-ex]');if(b){$('#ctext').value=EX[b.dataset.ex][1];showCheck(EX[b.dataset.ex][1])}};
+
+/* ===== quiz ===== */
+const QZ=[
+ ['A caller from "your bank" asks for the code you just received by SMS. What do you do?',['Read it out, they must be checking me','Hang up and call the number on my card','Ask them to call again later'],1,'Banks never ask for OTPs.'],
+ ['You get a message saying you won a government grant. It asks for a small fee. What is this?',['A real grant','A scam','A tax'],1,'Real grants never charge a fee to receive money.'],
+ ['A friend on WhatsApp asks you to forward the 6-digit code that was just sent to you.',['Forward it, they are a friend','Refuse. Tell them to use their own number','Send half'],1,'That code lets them take over your account.'],
+ ['Which is the safest way to pay an unknown online seller?',['Advance payment to a wallet','Cash on delivery','Send a CNIC photo'],1,'Cash on delivery lets you check the item first.'],
+ ['A stranger on a video call asks you to undress and records you. Later they ask for money.',['Pay once to end it','Do not pay, block and report to 1799','Delete the app only'],1,'Paying brings more demands.'],
+ ['How do you find how many SIMs are registered on your CNIC?',['Send your CNIC to 668 or use cnic.sims.pk','Ask a stranger on social media','Pay an agent'],0,'Use the official PTA service only.'],
+ ['What is the cybercrime helpline in Pakistan?',['1166','1799','1000'],1,'NCCIA helpline is 1799. 1166 is a health line.'],
+ ['Which setting stops thieves from logging in even if they know your password?',['A longer profile bio','Two-step verification','Posting less'],1,'Two-step verification adds a second lock.']
+];
+function drawQuiz(){
+  $('#quizBox').innerHTML=QZ.map((q,i)=>`<div class="q" id="q${i}"><h3>${i+1}. ${esc(q[0])}</h3>${q[1].map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join('')}<div class="why">${esc(q[3])}</div></div>`).join('');
+  $('#qres').innerHTML='';
+}
+drawQuiz();
+$('#qsub').onclick=()=>{
+  let s=0,ans=0;
+  QZ.forEach((q,i)=>{
+    const sel=$(`input[name=q${i}]:checked`);const wrap=$('#q'+i);
+    $$('label',wrap).forEach((l,j)=>{l.classList.remove('ok','no');if(j===q[2])l.classList.add('ok');else if(sel&&+sel.value===j)l.classList.add('no')});
+    wrap.classList.add('done');
+    if(sel){ans++;if(+sel.value===q[2])s++}
+  });
+  const msg=s>=7?'Excellent. You spot scams well.':s>=5?'Good, with a few gaps. Review the wrong answers.':'You are at risk. Read the guides and share them with family.';
+  $('#qres').innerHTML=`<div class="score"><div class="n">${s}/${QZ.length}</div><p><b>${msg}</b></p>${ans<QZ.length?'<p style="color:var(--muted)">'+(QZ.length-ans)+' question(s) unanswered.</p>':''}</div>`;
+  $('#qres').scrollIntoView({block:'nearest'});
+};
+$('#qreset').onclick=drawQuiz;
+
+/* ===== team ===== */
+$('#teamGrid').innerHTML=TEAM.map(t=>`<div class="card tcard"><div class="av">${esc(t.name.split(' ').map(w=>w[0]).slice(0,2).join(''))}</div><h3>${esc(t.name)}</h3><span class="role">${esc(t.roll)}</span></div>`).join('');
+
+/* ===== ShieldBot ===== */
+const SUG=['I got a scam call','My WhatsApp was hacked','I lost money','Cybercrime helpline','Make WhatsApp private','What is phishing?','Protect my SIM and CNIC','Who built this site?'];
+const ol=a=>'<ol>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+const INT=[
+ {k:/^(hi+|hello+|hey+|hola|salam|salaam|assalam.*|aoa|good (morning|afternoon|evening)|greetings|yo|sup)\b/,a:()=>`Hello! I am <b>ShieldBot</b>, the CyberShield Pakistan safety helper. I can help with scam calls, hacked accounts, lost money, privacy settings, SIM and CNIC checks, business name protection, and which helpline to call. What happened?`},
+ {k:/how are you|how r u|how do you do|what'?s up/,a:()=>`I am running well, thank you. More importantly, how can I keep you safe today? Tell me about a message, call or account problem.`},
+ {k:/who are you|what are you|your name|are you (a )?(bot|human|real)/,a:()=>`I am ShieldBot, an automated safety assistant on this website. I am not a person and I am not a government agency. I give general guidance and point you to the official helplines.`},
+ {k:/what can you do|^help$|^help me$|^menu$|^options$|features/,a:()=>`I can help with:<ul><li>Scam calls and messages</li><li>Hacked WhatsApp, Facebook, Instagram, TikTok</li><li>Lost money and wallet fraud</li><li>Blackmail and sextortion</li><li>SIM and CNIC misuse</li><li>Fake business or branch in your name</li><li>Safety for elderly people, children and schools</li><li>Helpline numbers</li></ul>Just type your situation.`},
+ {k:/thank|thanks|thx|shukriya|jazak/,a:()=>`You are welcome. Stay alert and share these tips with family. Ask me anything else.`},
+ {k:/^(bye|goodbye|see you|take care|ok bye|allah hafiz|khuda hafiz)/,a:()=>`Goodbye. Stay safe online, and call 1799 if you ever need to report a cybercrime.`},
+ {k:/helpline|hotline|phone number|which number|who (do i|should i) call|emergency number|contact number/,a:()=>`Key numbers:<ul><li><b>1799</b> NCCIA cybercrime</li><li><b>15</b> police emergency</li><li><b>111-727-273</b> State Bank consumer helpline</li><li><b>0800-55055</b> PTA</li><li><b>0800-88008</b> SECP</li><li><b>1777</b> NADRA</li><li><b>1122</b> Rescue, <b>115</b> Edhi ambulance</li></ul>See the <a href="#helplines" style="color:inherit;font-weight:700">Helplines page</a> for when to call each.`},
+ {k:/otp|one time (password|code)|verification code|6.?digit|six.?digit/,a:()=>`<b>Never share an OTP with anyone.</b> Banks, wallets, the police and shops do not need it.${ol(['Do not read or forward it.','Hang up or stop replying.','If you shared it: call your bank or wallet now and ask to freeze the account.','Change your passwords and report to NCCIA 1799.'])}`},
+ {k:/whatsapp.*(hack|stolen|taken|lost|code|banned)|(hack|stolen).*whatsapp|my whatsapp/,a:()=>`To take your WhatsApp back:${ol(['Install WhatsApp again and enter your number.','Enter the new 6-digit code that WhatsApp sends. The hacker will be logged out.','If it asks for a two-step PIN you did not set, wait 7 days or use the email reset link.','Turn on two-step verification.','Warn your contacts not to send money to messages from your number.'])}`},
+ {k:/(facebook|fb|instagram|insta|tiktok|snapchat|account).*(hack|stolen|taken|locked|compromis|access)|(hack|stolen).*(facebook|instagram|tiktok|account)|account hacked|got hacked|been hacked/,a:()=>`Do this now:${ol(['Reset your password with the app\'s official recovery page.','Change your email password first if you can.','Turn on two-factor authentication.','Log out of every other device.','Warn friends.','If money or blackmail is involved, call <b>1799</b>.'])}Full plan: <a href="#complain" style="color:inherit;font-weight:700">Complain Center</a>.`},
+ {k:/lost (my )?(money|cash|rs)|sent (money|rs|cash)|transferred|paid (a )?scam|money (was )?(stolen|gone|taken|deducted)|fraud (happened|with me)|i (was|got|am) (scammed|cheated|defrauded)|scammed|cheated|defrauded|fraud happened/,a:()=>`I am sorry this happened. Act quickly:${ol(['Call your bank or wallet using the number on your card or in the official app. Ask them to block the transfer and log a fraud complaint.','Change passwords and PINs.','Save screenshots, transaction IDs and the scammer\'s numbers.','Report to NCCIA on <b>1799</b>.','If your bank does not help, complain to the State Bank on <b>111-727-273</b> or via Sunwai.'])}Do not pay anyone who promises to recover your money. They are usually scammers.`},
+ {k:/blackmail|sextort|threat.*(photo|video|leak)|leak.*(photo|video)|nude|private (photo|video)/,a:()=>`You are not alone, and this is not your fault.${ol(['<b>Do not pay.</b> Paying leads to more demands.','Stop replying. Block the account.','Screenshot the chat, profile and any payment demand.','Report the account in the app.','Call <b>1799</b> or email helpdesk@nccia.gov.pk.','Tell a trusted adult or family member. If you feel unsafe, call <b>15</b>.'])}`},
+ {k:/scam call|fake call|phone call|someone called|got a call|called me|caller|bank (call|officer|manager)|pretend|impersonat.*(bank|police)|fia call|police call/,a:()=>`Hang up first. Then:${ol(['Never share your OTP, PIN, password or card number.','Do not press numbers, install an app or open a link the caller sends.','Call your bank on the number printed on your card.','Block the caller and report to <b>1799</b>.'])}Real banks, police and FIA do not threaten you or ask for money on the phone.`},
+ {k:/easypaisa|jazzcash|jazz cash|sadapay|nayapay|wallet|mobile account|wrong transfer|sent by mistake/,a:()=>`Wallet scams usually claim a transfer was sent to you by mistake or that your account will close. Check your balance only inside the official app, not in an SMS. Never send money back on a message request, and never give your PIN or OTP. If you lost money, contact the wallet company at once and then call 1799.`},
+ {k:/\bjobs?\b|\btasks?\b|earn money|work from home|like and earn|part.?time/,a:()=>`Fake job and task scams pay a little at first, then ask you to deposit money for bigger tasks. Real employers do not ask you to pay. Do not deposit. Keep chats and payment proof, and report to <b>1799</b>.`},
+ {k:/bisp|ehsaas|benazir|prize|lucky draw|\bwon\b|winner|lottery|\bgrant\b|reward/,a:()=>`Prize, BISP and grant messages that ask for a fee, a code or your CNIC are scams. You never pay to receive money. Do not tap the link. Check on the official website or the agency helpline, and delete the message.`},
+ {k:/daraz|olx|online shop|online order|courier|cash on delivery|seller|buyer|marketplace|parcel|delivery/,a:()=>`For safe shopping: use cash on delivery where you can, avoid advance payment to unknown sellers, check seller reviews and account age, and use the shopping app for support, not numbers from comments. Buyers and sellers should never share OTPs or click payment links sent in chat. If you were cheated, report to <b>1799</b>. See the <a href="#business" style="color:inherit;font-weight:700">Shopping guide</a>.`},
+ {k:/\bsims?\b|cnic|nadra|identity|biometric|\b668\b|\b8484\b|imei|stolen phone|lost phone|phone (lost|stolen)|registered on my/,a:()=>`To check SIMs on your CNIC:${ol(['Send your 13-digit CNIC with no dashes to <b>668</b>, or visit cnic.sims.pk.','Block any SIM you do not recognise through that operator, with your original CNIC.','If they do not fix it, call PTA <b>0800-55055</b>.','If your CNIC was misused, contact NADRA <b>1777</b>.'])}For a lost phone: block the SIM through your operator, report to police, and change important passwords. Check a phone\'s PTA registration by sending its IMEI to <b>8484</b>.`},
+ {k:/business|company|branch|brand name|my name|name (is )?(used|misused|being used)|fake (page|shop|branch|profile)|secp|register.*name|trademark|copy(ing)? my/,a:()=>`<b>Before you register:</b> search the SECP name database (secp.gov.pk, eServices) and check trademarks, domains and social handles.<br><b>If someone uses your name:</b>${ol(['Report fake pages inside the app as impersonation.','File with NCCIA on <b>1799</b>.','Complain to SECP on <b>0800-88008</b> if a company is registered with a similar name.','Send a trademark notice if you own the mark.','File an FIR with police <b>15</b> if you are being defrauded.'])}`},
+ {k:/complain|report|file (a )?(complaint|fir)|nccia|fia|cyber ?crime/,a:()=>`To report cybercrime:${ol(['Collect screenshots, links, numbers and transaction IDs.','Call <b>1799</b> or email helpdesk@nccia.gov.pk, or use the NCCIA website or visit an NCCIA office.','You can also call police <b>15</b>, which forwards cyber complaints to NCCIA.','Save your complaint number and follow up.'])}The FIA cyber wing has been merged into NCCIA.`},
+ {k:/\b(old (age|people|person|man|woman|relative)|elderly|elder|seniors?|grandpa|grandma|grandfather|grandmother|parents?|aged)\b/,a:()=>`Simple rules for older family members:<ul><li>Never tell anyone an OTP or PIN.</li><li>If a call scares you, hang up.</li><li>You never pay to receive money.</li><li>Call family before sending money.</li></ul>There is a large-text page: <a href="#seniors" style="color:inherit;font-weight:700">Senior Citizens</a>.`},
+ {k:/child|kid|school|student|teacher|teen|bully|bullying|cyberbully|game|gaming/,a:()=>`For children: keep accounts private, teach "stop, block, tell", and make sure they know they will not be punished for reporting a threat. Report harm to <b>1799</b>; child abuse can also go to <b>1121</b>. See <a href="#schools" style="color:inherit;font-weight:700">Schools &amp; Family</a>.`},
+ {k:/privacy|private|setting|secure my|protect my (account|profile)|lock my/,a:()=>`Top settings everywhere: private account, two-step verification, limit who can message or add you, review login activity and tagged posts. Which app do you use: WhatsApp, Facebook, Instagram or TikTok? Tell me and I will point you to the steps, or open <a href="#social" style="color:inherit;font-weight:700">the social guide</a>.`},
+ {k:/password|2fa|two.?step|two.?factor|authenticator/,a:()=>`Use a long, unique password for each important account and a password manager if you can. Turn on two-step verification (an authenticator app is safer than SMS). Never share codes, and change a password at once if you think it leaked.`},
+ {k:/\blinks?\b|\burl\b|website|phishing|fake site|\bclick|\bapk\b|attachment/,a:()=>`Do not tap links in unexpected messages. Type the address yourself or use the official app. Never install APK files sent in chat. If you entered a password on a suspicious page, change it immediately and turn on two-step verification. You can paste the message into the <a href="#checker" style="color:inherit;font-weight:700">Scam Checker</a>.`},
+ {k:/loan app|instant loan|loan/,a:()=>`Fake loan apps take your contacts and gallery and harass you. Use only licensed lenders, deny contact and gallery permission, and never pay an unknown agent. If you are being harassed or blackmailed, save screenshots and call <b>1799</b>.`},
+ {k:/deepfake|ai voice|voice clone|fake video|fake voice/,a:()=>`Scammers can copy voices and faces. If a relative or boss asks for urgent money, hang up and call back on a known number. Agree on a family code word. Do not trust videos or voice notes alone for money requests.`}
+];
+const TYPO={whatsap:'whatsapp',watsapp:'whatsapp',whatsup:'whatsapp',whatapp:'whatsapp',facebok:'facebook',fcebook:'facebook',instagarm:'instagram',instagrm:'instagram',tiktoc:'tiktok',pasword:'password',passwrd:'password',fruad:'fraud',hakced:'hacked',hacek:'hacked',acount:'account',accout:'account',blakmail:'blackmail',helpine:'helpline',moeny:'money',mony:'money',pls:'please',plz:'please',ur:'your',scamed:'scammed',phising:'phishing',fishing:'phishing',cybrcrime:'cybercrime',cyber:'cyber'};
+function norm(t){return t.toLowerCase().replace(/[^a-z0-9\s\-\.@\/\+]/g,' ').replace(/\s+/g,' ').trim().split(' ').map(w=>TYPO[w]||w).join(' ')}
+const APPN={whatsapp:/whats ?app|\bwa\b/,facebook:/facebook|\bfb\b|face book/,instagram:/insta(gram)?\b|\big\b/,tiktok:/tik ?tok/};
+const stripTitle=h=>(h.match(/<summary>(.*?)<span/)||[0,''])[1];
+const LK=(h,t)=>`<a href="${h}" style="color:inherit;font-weight:700">${t}</a>`;
+let lastTopic=null;
+const DEF={
+ phishing:'<b>Phishing</b> is a fake message, email or website that pretends to be a bank, wallet, courier or government office to steal your password, OTP or card details. Check the sender, never tap links in unexpected messages, and open the official app yourself.',
+ smishing:'<b>Smishing</b> is phishing by SMS or WhatsApp, for example a fake parcel or tax refund link. Do not tap the link. Open the company app or website yourself.',
+ vishing:'<b>Vishing</b> is phishing by phone call, like a fake bank officer asking for your OTP. Hang up and call the number on your card.',
+ malware:'<b>Malware</b> is harmful software such as spyware or banking trojans. On phones it often arrives as an APK sent in chat. Install apps only from Google Play or the App Store, and keep your phone updated.',
+ ransomware:'<b>Ransomware</b> locks your files and demands payment. Keep backups, do not open unknown attachments, and report to NCCIA on 1799.',
+ 'social engineering':'<b>Social engineering</b> means tricking a person, not a computer. Scammers use fear, urgency, authority or greed. Slow down and verify through a number you trust.',
+ otp:'<b>OTP</b> means one-time password: a short code sent by SMS or an app to confirm that you are the one logging in or paying. It is a secret. Never share it with anyone.',
+ 'two-step verification':'<b>Two-step verification</b> (2FA) adds a second check, such as a code from an authenticator app, after your password. Even if a thief learns your password, they cannot log in.',
+ nccia:'<b>NCCIA</b> is the National Cyber Crimes Investigation Agency. It took over cybercrime work from the FIA cyber wing. Call 1799 to report online fraud, hacking, blackmail or fake profiles.',
+ pta:'<b>PTA</b> is the Pakistan Telecommunication Authority. It regulates mobile operators. Use PTA for SIM checks (668), device checks (8484) and telecom complaints (0800-55055).',
+ secp:'<b>SECP</b> is the Securities and Exchange Commission of Pakistan. It registers companies. Use it to check a business name before registering and to complain about name misuse (0800-88008).',
+ vpn:'<b>A VPN</b> hides your internet traffic from the network you are on. It helps on public Wi-Fi but does not stop phishing or scams. Use a trusted provider.',
+ 'identity theft':'<b>Identity theft</b> is when someone uses your CNIC, SIM, photos or name to open accounts, take loans or cheat people. Check SIMs with 668, protect CNIC copies, and report misuse to NCCIA 1799 and NADRA 1777.',
+ 'sim swap':'<b>SIM swap fraud</b> is when a criminal gets a duplicate of your SIM to receive your OTPs. If your phone suddenly loses signal, call your operator at once and then your bank.',
+ deepfake:'<b>A deepfake</b> is a fake video or voice made with AI. If someone you know asks for urgent money, call them back on a known number and agree a family code word.',
+ spam:'<b>Spam</b> is unwanted bulk messages or calls. Report spam numbers to PTA and block them. Never reply, even to say stop.'
+};
+const MORE={
+ invest:'Real investments are licensed. Check the company on the SECP website and ask whether it is allowed to take deposits. If a group admin or "mentor" promises guaranteed profit, assume it is a scam. If you already paid, keep proofs and report to <b>1799</b>.',
+ romance:'Romance scammers build trust for weeks, then invent an emergency. Never send money, gift cards or intimate photos to someone you have not met. Do a reverse image search of their photos. If threatened, do not pay, block them and call <b>1799</b>.',
+ email:'Check the full sender address, not the display name. Hover over links before tapping. Real companies do not ask for passwords by email. Turn on two-step verification for your email, because it can reset all your other accounts.',
+ card:'Cover the keypad, use ATMs inside banks, and turn on SMS alerts. If your card is lost or used without permission, call the bank number on the back of the card or inside the app to block it, then report fraud in writing.',
+ wifi:'Use mobile data for banking. If you must use public Wi-Fi, use a trusted VPN and never log into banking. Forget the network afterwards.',
+ malware:'Steps: switch on airplane mode, uninstall unknown apps (check Settings, Apps, recently installed), run a trusted security scan, change passwords from a clean device, and call your bank if you banked on that phone.',
+ unknown:'Do not call back unknown foreign numbers or numbers that ring once and cut. Some are premium-rate traps. Block and report spam to PTA on 0800-55055.',
+ tips:'Weekly habits: check your SIMs on 668 every few months, review linked devices on WhatsApp, update your phone, use a different password for email and bank, and talk to family about common scams.'
+};
+const INT2=[
+ {id:null,k:/who (made|built|created|developed|designed) (you|this|the site|this site|shieldbot)|your (developers?|team|creators?|makers?)|\bdevelopers?\b|which university|your teacher|supervisor|about (the )?(project|team)/,a:()=>`This website and ShieldBot were built by <b>Rubab Bashir, Zunaira Mehmood, Hifza Ajmal and Yashfa Irfan</b> at <b>Superior University, Lahore</b>, supervised by <b>Miss Farah Taj</b>. See the ${LK('#team','Our Team page')}.`},
+ {id:null,k:/(what is|what are|what does|what.s|meaning of|define|explain)\s+(a |an |the )?(phishing|smishing|vishing|malware|ransomware|social engineering|otp|two.?step( verification)?|2fa|two.?factor|nccia|pta|secp|vpn|identity theft|sim swap|deepfake|spam)\b/,a:q=>{
+   const m=q.match(/phishing|smishing|vishing|malware|ransomware|social engineering|otp|two.?step|2fa|two.?factor|nccia|pta|secp|vpn|identity theft|sim swap|deepfake|spam/)[0];
+   const key=/two|2fa/.test(m)?'two-step verification':m;return DEF[key]}},
+ {id:'invest',k:/\binvest|forex|crypto|bitcoin|binance|ponzi|double (your )?money|guaranteed (profit|return)|trading (group|signal)|profit/,a:()=>`<b>Investment scams</b> promise fast, guaranteed profit, often through a WhatsApp or Telegram group, a fake trading app or a "mentor". Early small payouts build trust, then you are asked to invest more and cannot withdraw.${ol(['Do not send more money.','Check whether the company is licensed with SECP.','Save chats, wallet addresses and payment proofs.','Report to <b>1799</b>.'])}Ask me "tell me more" for details.`},
+ {id:'romance',k:/romance|dating|love scam|girlfriend|boyfriend|online (friend|relationship)|matrimon|rishta|proposal/,a:()=>`<b>Romance and matrimonial scams</b>: a new online "partner" or rishta contact builds trust, then needs money for a visa, parcel, customs or a medical emergency.${ol(['Never send money to someone you have not met.','Video call and verify identity with someone you trust.','Do not share intimate photos.','Report to <b>1799</b> if you were cheated or threatened.'])}`},
+ {id:'email',k:/\bemails?\b|gmail|e-mail|inbox/,a:()=>`Fake emails copy banks, couriers and employers. Check the sender address, do not open unexpected attachments, and never enter a password from an email link. If you did, change that password at once and turn on two-step verification. Ask me "tell me more" for a checklist.`},
+ {id:'wifi',k:/wi-?fi|hotspot|public network/,a:()=>`Public Wi-Fi can be watched or faked. Avoid banking and password logins on it. Use mobile data instead, or a trusted VPN. Ask me "tell me more".`},
+ {id:'malware',k:/virus|malware|antivirus|spyware|trojan|phone (is )?(slow|hacked|infected|acting)|hacked phone|suspicious app/,a:()=>`If your phone may be infected: uninstall apps you do not recognise, stop banking from it, update the system, and change passwords from a clean device. Never install APK files from chat. Say "tell me more" for steps.`},
+ {id:'wifi',k:/\bqr\b|qr code/,a:()=>`Do not scan a QR code to <b>receive</b> money. Scanning is for paying only, and scammers send QR codes that take money. Check the merchant name before you confirm a payment, and never share the OTP.`},
+ {id:'unknown',k:/unknown number|foreign number|international (call|number)|\+\d{2}|missed call|ring (once|and cut)|wangiri|spam call|robocall/,a:()=>`Do not call back unknown or foreign numbers, especially ones that ring once and cut. Block them and report spam calls to PTA (0800-55055). Never share OTPs or CNIC details on a call. Say "tell me more" for more.`},
+ {id:'card',k:/\bdebit\b|credit card|\batm\b|card (blocked|stolen|lost|cloned|fraud)|skimm|\bpin\b/,a:()=>`Never share your card PIN, CVV or OTP. If a card is lost or used without permission, call the number on the back of the card or in the official app and block it. Then ask for a written fraud complaint and keep the reference number. If the bank does not respond, contact the State Bank (111-727-273). Ask me "tell me more".`},
+ {id:null,k:/mobile banking|internet banking|banking app|online banking|raast|1link/,a:()=>`Use only the official bank app from the official store. Turn on app lock and transaction alerts. Never log in from a link in a message, never share OTPs, and log out after use. If you suspect fraud, call your bank straight away. See the ${LK('#bank','Bank &amp; Scam Calls page')}.`},
+ {id:null,k:/inherit|beneficiary|million dollars?|dollars? (from|transfer)|prince|advance fee|customs (fee|charges)|clearance fee/,a:()=>`That is an <b>advance-fee scam</b>. You are told a big amount is waiting, but you must first pay a "fee" or "tax". Nothing is waiting. Do not pay or share ID documents. Block and report to <b>1799</b>.`},
+ {id:null,k:/data breach|leaked (data|password|account)|was my (data|password) (leaked|stolen)|pwned/,a:()=>`If your data may have leaked: change that password and any account that shares it, turn on two-step verification, watch bank alerts, check SIMs on <b>668</b>, and be careful with calls that quote your personal details.`},
+ {id:null,k:/(get|recover) (my )?(money )?back|refund|chargeback|reverse (the )?(payment|transfer|transaction)/,a:()=>`I cannot promise recovery, but speed helps. Call your bank or wallet immediately and ask them to stop or recall the transfer. File a complaint with <b>1799</b> and keep the reference numbers. If the bank does not act, complain to the State Bank (<b>111-727-273</b>). Beware of people who promise to "recover" your money for a fee. They are usually scammers.`},
+ {id:null,k:/how long|how many days|status of (my )?complaint|follow ?up|no response|nobody (replied|responded)/,a:()=>`Keep your complaint number and follow up by phone (1799) or email (helpdesk@nccia.gov.pk) after a few working days. For bank complaints the State Bank sets response timelines, and fraud complaints can take up to 30 working days for a final reply. If a call does not connect, try the agency website or visit the nearest office.`},
+ {id:null,k:/\bfir\b|police station|file (a )?case|lodge (a )?(report|complaint)/,a:()=>`You can file an FIR at your local police station or call <b>15</b>. For cyber crimes it is often faster to call <b>1799</b> (NCCIA). Bring your CNIC, screenshots, phone numbers and transaction details, and ask for a copy of the FIR or a complaint number.`},
+ {id:null,k:/punishment|penalty|\blaws?\b|peca|jail|legal action against|which section/,a:()=>`Online fraud, hacking, identity theft and harassment are offences under Pakistan's Prevention of Electronic Crimes Act (PECA) 2016 and other laws. I am not a lawyer, so for legal advice speak to a lawyer or the Ministry of Human Rights legal helpline (<b>1099</b>).`},
+ {id:null,k:/is (this|it|that) (safe|legit|real|genuine|fake|a scam|true)|can i trust|should i (click|trust|reply|pay|send)/,a:()=>`Paste the message into the ${LK('#checker','Scam Checker')} for a quick warning level. As a rule: if anyone asks for money, a code, a password or your CNIC, treat it as a scam until you verify through an official number.`},
+ {id:'tips',k:/^(?!.*\b(old|elderly|elder|seniors?|parents?|children|child|kids?|school|student|teacher)\b)(.*)(\btips?\b|advice|best practices?|stay safe|how (can|do) i (stay|be|remain) safe|stay protected)/,a:()=>`Five habits that stop most scams:${ol(['Never share OTPs, PINs or passwords.','Turn on two-step verification everywhere.','Check SIMs on your CNIC with 668.','Pause when a message is urgent. Verify using a trusted number.','Keep apps private and updated.'])}Ask me "tell me more".`},
+ {id:null,k:/scared|afraid|worried|panic|nervous|terrified|anxious|stress|frightened|help me please|i don.?t know what to do/,a:()=>`Take a breath. You did the right thing by asking, and most of these situations can be handled step by step. Tell me in one sentence what happened (a call, a message, a hacked account, lost money or blackmail) and I will give you the first steps. If you are in danger right now, call <b>15</b>.`},
+ {id:null,k:/^(ok|okay|hmm+|cool|great|nice|good|fine|alright|wow|lol|haha+|got it|i see|understood)$/,a:()=>`Glad it helps. Anything else you want to check? You can ask about a scam, a setting or a helpline.`},
+ {id:null,k:/^(no|nope|nothing|nah|no thanks|that.?s all|thats all|nothing else)$/,a:()=>`Okay. I am here whenever you need me. Stay safe online.`},
+ {id:null,k:/\b(stupid|useless|idiot|dumb)\b/,a:()=>`Sorry if I missed the point. Tell me again in one sentence what you need, for example "I got a scam call" or "how do I make Instagram private".`}
+];
+function appIntent(q){
+  let app=null;for(const k in APPN){if(APPN[k].test(q)){app=k;break}}
+  if(!app)return null;
+  const p=PL[app];
+  if(/hack|stolen|taken over|locked out|cannot log|can.?t log|lost access|compromis/.test(q)&&app!=='whatsapp')return null;
+  if(app==='whatsapp'&&/hack|stolen|banned|lost access|verification code/.test(q))return null;
+  if(/privacy|private|setting|secure|protect|lock|safe|safety|turn on|enable|two.?step|2fa|hide|stop (people|strangers)|who can see/.test(q)){
+    lastTopic='app:'+app;
+    return `<b>${p.label} privacy settings to turn on:</b><ul>`+p.priv.slice(0,5).map(s=>`<li><b>${esc(s[0])}</b>: ${esc(s[1])}</li>`).join('')+`</ul>Why it matters: ${esc(p.priv[0][2])} Say <b>more</b> for the rest. Menu names can change between app versions.`;
+  }
+  if(/scam|fraud|fake|trick|danger|risk|threat|common|beware/.test(q)){
+    lastTopic='app:'+app;
+    return `<b>Common ${p.label} scams:</b><ul>`+p.scams.map(h=>`<li>${stripTitle(h)}</li>`).join('')+`</ul>Ask me about any one of them, or say "${p.label} privacy" to lock your account.`;
+  }
+  if(/report|block|complain/.test(q)){
+    lastTopic='app:'+app;
+    return `To report on ${p.label}: open the profile or message, tap the three dots or menu, choose <b>Report</b> and pick the closest reason (scam, impersonation, harassment), then <b>Block</b>. Screenshot first. For crimes such as blackmail or fraud also call <b>1799</b>.`;
+  }
+  lastTopic='app:'+app;
+  return `What would you like to know about ${p.label}? I can explain its <b>scams</b>, its <b>privacy settings</b>, what to do if the account is <b>hacked</b>, or how to <b>report and block</b>. Open the full ${LK('#social',p.label+' guide')}.`;
+}
+function moreAns(){
+  if(lastTopic&&lastTopic.startsWith('app:')){
+    const p=PL[lastTopic.slice(4)];
+    return `<b>More ${p.label} settings:</b><ul>`+p.priv.slice(5).map(s=>`<li><b>${esc(s[0])}</b>: ${esc(s[1])}. ${esc(s[2])}</li>`).join('')+`</ul>Also read the scams section on the ${LK('#social','full guide')}.`;
+  }
+  if(lastTopic&&MORE[lastTopic])return MORE[lastTopic];
+  return `Tell me which part you want more on. For example: "how do I turn on two-step verification on WhatsApp", "what should I do after a scam call", or "how do I report cybercrime". The full guides are on the ${LK('#social','Social Media Safety')}, ${LK('#bank','Bank')} and ${LK('#complain','Complain Center')} pages.`;
+}
+function bot(t){
+  const q=norm(t);
+  const words=q?q.split(' ').length:0;
+  if(!q)return 'Please type a question.';
+  if(/^(yes|yeah|yep|yup|sure|please|go on|continue|more|tell me more|more info|more details|explain more|and)$/.test(q)||/tell me more|more details|explain further/.test(q))return moreAns();
+  if(words<=4&&INT[0].k.test(q)&&!/how are you/.test(q)){lastTopic=null;return INT[0].a()}
+  for(const i of INT2){if(i.k.test(q)){lastTopic=i.id||null;return i.a(q)}}
+  const ap=appIntent(q);if(ap)return ap;
+  for(const i of INT.slice(1)){if(i.k.test(q)){lastTopic=null;return i.a()}}
+  return `I did not catch that. I can help with scam calls, OTP, hacked accounts, lost money, blackmail, investment scams, SIM and CNIC checks, business name misuse, app privacy settings, definitions like phishing, and helpline numbers. Try one of the buttons below, or describe what happened in one sentence.`;
+}
+const body=$('#sbBody');
+function addMsg(html,who){const d=document.createElement('div');d.className='m '+who;if(who==='usr')d.textContent=html;else d.innerHTML=html;body.appendChild(d);body.scrollTop=body.scrollHeight}
+function addSug(){const d=document.createElement('div');d.className='qb';d.innerHTML=SUG.map(s=>`<button type="button">${esc(s)}</button>`).join('');body.appendChild(d);body.scrollTop=body.scrollHeight}
+function ask(t){addMsg(t,'usr');setTimeout(()=>{addMsg(bot(t),'bot');addSug()},300)}
+let opened=false;
+function openBot(msg){
+  $('#sbWin').classList.add('open');$('#sbBtn').style.display='none';$('#sbTip').style.display='none';$('#sbBtn').setAttribute('aria-expanded','true');
+  if(!opened){opened=true;addMsg(`Hello, I am <b>ShieldBot</b>. Tell me what happened, or tap a question below. Never type OTPs, PINs, passwords or card numbers here.`,'bot');addSug()}
+  if(msg)ask(msg);
+  $('#sbIn').focus();
+}
+$('#sbBtn').onclick=()=>openBot();
+$('#sbX').onclick=()=>{$('#sbWin').classList.remove('open');$('#sbBtn').style.display='flex';$('#sbBtn').setAttribute('aria-expanded','false')};
+$('#sbForm').onsubmit=e=>{e.preventDefault();const v=$('#sbIn').value.trim();if(!v)return;$('#sbIn').value='';ask(v)};
+body.addEventListener('click',e=>{const b=e.target.closest('.qb button');if(b){b.parentElement.remove();ask(b.textContent)}});
+$('#askbot').onclick=()=>openBot();
+$('#quick').onchange=e=>{const v=e.target.value;if(v){openBot(v);e.target.value=''}};
+
+/* ===== icons everywhere ===== */
+const PHONE='<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>';
+const NAVI={
+ home:'<path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/>',
+ checker:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+ social:ICON.chat,bank:ICON.bank,sim:ICON.sim,business:ICON.shop,seniors:ICON.elder,schools:ICON.school,complain:ICON.flag,
+ helplines:PHONE,
+ quiz:'<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9"/>',
+ team:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 0 1 10 0v1"/><path d="M15 15a4 4 0 0 1 6 4v1"/>'
+};
+const svgI=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
+$$('.menu a').forEach(a=>{const k=a.getAttribute('href').slice(1);if(NAVI[k])a.insertAdjacentHTML('afterbegin',svgI(NAVI[k]))});
+VIEWS.forEach(k=>{
+  if(k==='home')return;
+  const w=$('#v-'+k+' .ph .wrap');
+  if(w&&NAVI[k])w.insertAdjacentHTML('afterbegin',`<span class="phico">${svgI(NAVI[k])}</span>`);
+});
+const FL={checker:'Scam Checker',social:'Social Media Safety',bank:'Bank &amp; Calls',sim:'SIM &amp; CNIC',business:'Daraz &amp; Business',seniors:'Senior Citizens',schools:'Schools &amp; Family',complain:'Complain Center',helplines:'Helplines',quiz:'Safety Quiz'};
+$('#flinks').innerHTML=Object.keys(FL).map(k=>`<a href="#${k}">${svgI(NAVI[k])}${FL[k]}</a>`).join('');
+const EMI=[[0,PHONE],[1,'<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/>'],[2,ICON.bank],[3,ICON.sim],[4,ICON.shop],[5,NAVI.team]];
+$('#emerg').innerHTML=EMI.map(e=>`<a class="card emg" href="#helplines"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">${e[1]}</svg></span><div><b>${esc(HL[e[0]][0])}</b><span>${esc(HL[e[0]][1])}</span></div></a>`).join('');
+
+/* ===== icons for menu, page titles, quick help, tips, back to top ===== */
+Object.assign(ICON,{
+ home:'<path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="m8.5 11 1.8 1.8 3.2-3.6"/>',
+ phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+ quiz:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/>',
+ users:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-1a5 5 0 0 1 10 0v1"/><circle cx="17" cy="9" r="2.5"/><path d="M15 15a4 4 0 0 1 6 4v1"/>',
+ lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+ bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>'
+});
+const svgN=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
+const QK=[['search','Check a message','#checker'],['lock','My account is hacked','#complain'],['phone','Helpline numbers','#helplines'],['sim','Check my SIMs','#sim'],['chat','Lock WhatsApp','#social'],['bank','Bank or wallet fraud','#bank'],['shop','Check a business name','#business'],['elder','Help for parents','#seniors']];
+$('#quick2').innerHTML=QK.map(q=>`<a href="${q[2]}"><span class="ico">${svgN(q[0])}</span>${q[1]}</a>`).join('');
+const TIPS=['Never share an OTP with anyone, even if they say they are from your bank.','If a call or message feels urgent and scary, stop. Scammers rely on panic.','Turn on two-step verification on WhatsApp, Facebook, Instagram and your email.','You never pay money to receive a prize, grant or refund.','Check how many SIMs are registered on your CNIC by sending it to 668.','Do not install APK files sent in chat. Use the official app store.','Cash on delivery is safer than advance payment to an unknown seller.','If someone threatens to leak your photos, do not pay. Block, save screenshots and call 1799.','Search your business name on SECP before you register it.','Agree a family code word so nobody can fake a voice call asking for money.'];
+let tipI=Math.floor(Math.random()*TIPS.length);
+const showTip=()=>{$('#tipText').textContent=TIPS[tipI%TIPS.length]};
+showTip();$('#tipNext').onclick=()=>{tipI++;showTip()};
+const tt=$('#toTop');
+addEventListener('scroll',()=>tt.classList.toggle('on',scrollY>600),{passive:true});
+tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+route();
+</script>
+
+</body>
+</html>
